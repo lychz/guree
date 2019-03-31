@@ -1,12 +1,12 @@
 Basic button:
 
-```jsx
+```tsx
 <Button>Push Me</Button>
 ```
 
 Big pink button:
 
-```jsx
+```tsx
 <Button size="large" color="deeppink">
   Click Me
 </Button>
@@ -14,9 +14,9 @@ Big pink button:
 
 And you _can_ **use** `any` [Markdown](http://daringfireball.net/projects/markdown/) here.
 
-Fenced code blocks with `js`, `jsx` or `javascript` languages are rendered as a interactive playgrounds:
+Fenced code blocks with `js`, `tsx` or `javascript` languages are rendered as a interactive playgrounds:
 
-```jsx
+```tsx
 <Button>Push Me</Button>
 ```
 
@@ -28,7 +28,7 @@ You can add a custom props to an example wrapper (` ```js { "props": { "classNam
 
 Or disable an editor by passing a `noeditor` modifier (` ```js noeditor `):
 
-```jsx noeditor
+```tsx noeditor
 <Button>Push Me</Button>
 ```
 
@@ -48,7 +48,7 @@ Current component (like `Button` in this example) is always accessible by its n
 
 Or you can explicitly import everything, to make examples easier to copy into your app code:
 
-```jsx
+```tsx
 import React from "react";
 import Button from "rsg-example/components/Button";
 <Button>
@@ -60,7 +60,7 @@ _Note: `rsg-example` module is an alias defined by the [moduleAliases](https://r
 
 Each example has its own state that you can access at the `state` variable and change with the `setState` function. Default state is `{}`:
 
-```jsx
+```tsx
 <div>
   <Button
     size="small"
@@ -79,7 +79,7 @@ Each example has its own state that you can access at the `state` variable and c
 
 You can change the default state:
 
-```jsx
+```tsx
 initialState = { count: 42 };
 <Button onClick={() => setState({ count: state.count + 1 })}>
   {state.count}
