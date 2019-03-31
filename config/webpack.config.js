@@ -144,6 +144,8 @@ module.exports = function(webpackEnv) {
       // changing JS code would still trigger a refresh.
     ].filter(Boolean),
     output: {
+      library: 'Lui',
+      libraryTarget: 'umd',
       // The build folder.
       path: isEnvProduction ? paths.appBuild : undefined,
       // Add /* filename */ comments to generated require()s in the output.
@@ -265,6 +267,7 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        'rsg-example': path.resolve(__dirname, '/src/components'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

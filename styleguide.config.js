@@ -1,5 +1,6 @@
 const path = require('path');
 const { version } = require('./package');
+const webpackConfig = require('./config/webpack.config.js')
 
 module.exports = {
 	components: 'src/components/**/[A-Z]*.tsx',
@@ -9,6 +10,9 @@ module.exports = {
 	},
 	ribbon: {
 		url: 'https://github.com/styleguidist/react-styleguidist',
+	},
+	webpackConfig: {
+		module: webpackConfig().module,
 	},
 	version,
 };
