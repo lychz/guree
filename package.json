@@ -1,7 +1,11 @@
 {
-  "name": "lui",
+  "name": "guree",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "./build/static/js/main.js",
+  "files": [
+    "/build/static/**/*"
+  ],
   "dependencies": {
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
