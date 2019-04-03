@@ -1,12 +1,13 @@
 {
   "name": "guree",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
-  "main": "./build/static/js/main.js",
+  "main": "./build/static/js/index.js",
+  "types": "/build/static/js/index.d.ts",
   "files": [
     "/build/static/**/*"
   ],
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
     "@types/jest": "^24.0.11",
@@ -65,7 +66,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "node scripts/build.js & npx tsc -p tsconfig.json --emitDeclarationOnly",
     "test": "node scripts/test.js",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
