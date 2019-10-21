@@ -1,6 +1,6 @@
 {
   "name": "guree",
-  "version": "0.1.1",
+  "version": "0.1.6",
   "private": false,
   "main": "./build/static/js/index.js",
   "types": "/build/static/js/index.d.ts",
