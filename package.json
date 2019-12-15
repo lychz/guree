@@ -1,11 +1,11 @@
 {
   "name": "guree",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
-  "main": "./build/static/js/index.js",
-  "types": "/build/static/js/index.d.ts",
+  "main": "./build/lib/index.js",
+  "types": "/build/lib/index.d.ts",
   "files": [
-    "/build/static/**/*"
+    "/build/lib/**/*"
   ],
   "devDependencies": {
     "@babel/core": "7.2.2",

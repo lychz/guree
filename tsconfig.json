@@ -16,7 +16,7 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "declaration": true,
-    "declarationDir": "build/static/js",
+    "declarationDir": "build/lib",
     "emitDeclarationOnly": true,
     "jsx": "preserve",
   },

@@ -113,6 +113,7 @@ module.exports = function(webpackEnv) {
     return loaders;
   };
 
+
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
     // Stop compilation early in production
@@ -124,25 +125,12 @@ module.exports = function(webpackEnv) {
       : isEnvDevelopment && 'cheap-module-source-map',
     // These are the "entry points" to our application.
     // This means they will be the "root" imports that are included in JS bundle.
-    entry: [
-      // Include an alternative client for WebpackDevServer. A client's job is to
-      // connect to WebpackDevServer by a socket and get notified about changes.
-      // When you save a file, the client will either apply hot updates (in case
-      // of CSS changes), or refresh the page (in case of JS changes). When you
-      // make a syntax error, this client will display a syntax error overlay.
-      // Note: instead of the default WebpackDevServer client, we use a custom one
-      // to bring better experience for Create React App users. You can replace
-      // the line below with these two lines if you prefer the stock client:
-      // require.resolve('webpack-dev-server/client') + '?/',
-      // require.resolve('webpack/hot/dev-server'),
-      isEnvDevelopment &&
-        require.resolve('react-dev-utils/webpackHotDevClient'),
-      // Finally, this is your app's code:
-      paths.appIndexJs,
-      // We include the app code last so that if there is a runtime error during
-      // initialization, it doesn't blow up the WebpackDevServer client, and
-      // changing JS code would still trigger a refresh.
-    ].filter(Boolean),
+    entry: isEnvDevelopment 
+      ? [
+          require.resolve('react-dev-utils/webpackHotDevClient'),
+          ...Object.values(paths.appIndexJs),
+        ].filter(Boolean)
+      : paths.appIndexJs,
     output: {
       library: 'Lui',
       libraryTarget: 'umd',
@@ -152,9 +140,9 @@ module.exports = function(webpackEnv) {
       pathinfo: isEnvDevelopment,
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
-      filename: isEnvProduction
-      ? 'static/js/index.js'
-      : isEnvDevelopment && 'static/js/bundle.js',
+      filename: (chunkData) => {
+        return chunkData.chunk.name === 'index' ? 'lib/[name].js': 'lib/components/[name]/index.js';
+      },
       // There are also additional JS chunk files if you use code splitting.
       // chunkFilename: isEnvProduction
       // ? 'static/js/[name].[contenthash:8].chunk.js'
@@ -541,7 +529,9 @@ module.exports = function(webpackEnv) {
         new MiniCssExtractPlugin({
           // Options similar to the same options in webpackOptions.output
           // both options are optional
-          filename: 'static/css/[name].css',
+          filename: (chunkData) => {
+            return chunkData.chunk.name === 'index' ? 'lib/[name].css': 'lib/components/[name]/index.css';
+          },
           chunkFilename: 'static/css/[name].chunk.css',
         }),
       // Generate a manifest file which contains a mapping of all asset filenames
