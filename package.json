@@ -12,14 +12,14 @@
     "@svgr/webpack": "4.1.0",
     "@types/jest": "^24.0.11",
     "@types/node": "^11.12.2",
-    "@types/react": "^16.8.10",
-    "@types/react-dom": "^16.8.3",
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
     "babel-loader": "8.0.5",
     "babel-plugin-named-asset-import": "^0.3.1",
-    "babel-preset-react-app": "^7.0.2",
+    "babel-preset-react-app": "^9.1.2",
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "1.0.0",
@@ -48,11 +48,12 @@
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.5.0",
     "postcss-safe-parser": "4.0.1",
-    "react": "^16.8.6",
+    "react": "^16.13.1",
     "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
-    "react-dom": "^16.8.6",
+    "react-dom": "^16.13.1",
     "react-styleguidist": "^9.0.5",
+    "react-test-renderer": "^16.13.1",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
@@ -120,10 +121,6 @@
       "web.jsx",
       "jsx",
       "node"
-    ],
-    "watchPlugins": [
-      "D:\\Lui\\node_modules\\jest-watch-typeahead\\filename.js",
-      "D:\\Lui\\node_modules\\jest-watch-typeahead\\testname.js"
     ]
   },
   "babel": {
