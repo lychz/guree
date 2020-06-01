@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`build files build exports modules correctly 1`] = `
+Array [
+  "Button",
+  "Icon",
+]
+`;

@@ -9,6 +9,13 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
+"@babel/code-frame@^7.10.1":
+  version "7.10.1"
+  resolved "https://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.10.1.tgz?cache=0&sync_timestamp=1590617374675&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcode-frame%2Fdownload%2F%40babel%2Fcode-frame-7.10.1.tgz#d5481c5095daa1c57e16e54c6f9198443afb49ff"
+  integrity sha1-1UgcUJXaocV+FuVMb5GYRDr7Sf8=
+  dependencies:
+    "@babel/highlight" "^7.10.1"
+
 "@babel/code-frame@^7.8.3":
   version "7.8.3"
   resolved "https://registry.npm.taobao.org/@babel/code-frame/download/@babel/code-frame-7.8.3.tgz?cache=0&sync_timestamp=1578953126105&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fcode-frame%2Fdownload%2F%40babel%2Fcode-frame-7.8.3.tgz#33e25903d7481181534e12ec0a25f16b6fcf419e"
@@ -447,6 +454,11 @@
   dependencies:
     "@babel/types" "^7.8.3"
 
+"@babel/helper-validator-identifier@^7.10.1":
+  version "7.10.1"
+  resolved "https://registry.npm.taobao.org/@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.10.1.tgz?cache=0&sync_timestamp=1590617380856&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fhelper-validator-identifier%2Fdownload%2F%40babel%2Fhelper-validator-identifier-7.10.1.tgz#5770b0c1a826c4f53f5ede5e153163e0318e94b5"
+  integrity sha1-V3CwwagmxPU/Xt5eFTFj4DGOlLU=
+
 "@babel/helper-validator-identifier@^7.9.0":
   version "7.9.0"
   resolved "https://registry.npm.taobao.org/@babel/helper-validator-identifier/download/@babel/helper-validator-identifier-7.9.0.tgz#ad53562a7fc29b3b9a91bbf7d10397fd146346ed"
@@ -499,6 +511,15 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@babel/highlight@^7.10.1":
+  version "7.10.1"
+  resolved "https://registry.npm.taobao.org/@babel/highlight/download/@babel/highlight-7.10.1.tgz?cache=0&sync_timestamp=1590617386087&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fhighlight%2Fdownload%2F%40babel%2Fhighlight-7.10.1.tgz#841d098ba613ba1a427a2b383d79e35552c38ae0"
+  integrity sha1-hB0Ji6YTuhpCeis4PXnjVVLDiuA=
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.10.1"
+    chalk "^2.0.0"
+    js-tokens "^4.0.0"
+
 "@babel/highlight@^7.8.3":
   version "7.9.0"
   resolved "https://registry.npm.taobao.org/@babel/highlight/download/@babel/highlight-7.9.0.tgz#4e9b45ccb82b79607271b2979ad82c7b68163079"
@@ -512,6 +533,11 @@
   version "7.4.2"
   resolved "http://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.4.2.tgz#b4521a400cb5a871eab3890787b4bc1326d38d91"
   integrity sha1-tFIaQAy1qHHqs4kHh7S8EybTjZE=
+
+"@babel/parser@^7.10.1":
+  version "7.10.2"
+  resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.10.2.tgz?cache=0&sync_timestamp=1590868598847&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fparser%2Fdownload%2F%40babel%2Fparser-7.10.2.tgz#871807f10442b92ff97e4783b9b54f6a0ca812d0"
+  integrity sha1-hxgH8QRCuS/5fkeDubVPagyoEtA=
 
 "@babel/parser@^7.8.6", "@babel/parser@^7.9.0":
   version "7.9.4"
@@ -1531,6 +1557,15 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/template@7":
+  version "7.10.1"
+  resolved "https://registry.npm.taobao.org/@babel/template/download/@babel/template-7.10.1.tgz?cache=0&sync_timestamp=1590617379493&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftemplate%2Fdownload%2F%40babel%2Ftemplate-7.10.1.tgz#e167154a94cb5f14b28dc58f5356d2162f539811"
+  integrity sha1-4WcVSpTLXxSyjcWPU1bSFi9TmBE=
+  dependencies:
+    "@babel/code-frame" "^7.10.1"
+    "@babel/parser" "^7.10.1"
+    "@babel/types" "^7.10.1"
+
 "@babel/template@^7.1.0", "@babel/template@^7.2.2", "@babel/template@^7.4.0":
   version "7.4.0"
   resolved "http://registry.npm.taobao.org/@babel/template/download/@babel/template-7.4.0.tgz#12474e9c077bae585c5d835a95c0b0b790c25c8b"
@@ -1586,6 +1621,15 @@
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.11"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@^7.10.1":
+  version "7.10.2"
+  resolved "https://registry.npm.taobao.org/@babel/types/download/@babel/types-7.10.2.tgz?cache=0&sync_timestamp=1590868599196&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftypes%2Fdownload%2F%40babel%2Ftypes-7.10.2.tgz#30283be31cad0dbf6fb00bd40641ca0ea675172d"
+  integrity sha1-MCg74xytDb9vsAvUBkHKDqZ1Fy0=
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.10.1"
+    lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
 "@babel/types@^7.4.4", "@babel/types@^7.8.3", "@babel/types@^7.8.6", "@babel/types@^7.9.0":
@@ -2529,6 +2573,13 @@ babel-plugin-transform-react-remove-prop-types@0.4.24:
   version "0.4.24"
   resolved "http://registry.npm.taobao.org/babel-plugin-transform-react-remove-prop-types/download/babel-plugin-transform-react-remove-prop-types-0.4.24.tgz#f2edaf9b4c6a5fbe5c1d678bfb531078c1555f3a"
   integrity sha1-8u2vm0xqX75cHWeL+1MQeMFVXzo=
+
+babel-plugin-transform-require-context@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npm.taobao.org/babel-plugin-transform-require-context/download/babel-plugin-transform-require-context-0.1.1.tgz#319b545ca83080b5062776b46cc9b8b346fea9a6"
+  integrity sha1-MZtUXKgwgLUGJ3a0bMm4s0b+qaY=
+  dependencies:
+    "@babel/template" "7"
 
 babel-preset-jest@^23.2.0:
   version "23.2.0"

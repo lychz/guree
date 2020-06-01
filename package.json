@@ -83,9 +83,20 @@
     "not op_mini all"
   ],
   "jest": {
+    "collectCoverage": true,
+    "reporters": [
+      "default"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
     ],
     "resolver": "jest-pnp-resolver",
     "setupFiles": [
@@ -126,9 +137,15 @@
   "babel": {
     "presets": [
       "react-app"
-    ]
+    ],
+    "env": {
+      "test": {
+        "plugins": ["transform-require-context"]
+      }
+    }
   },
   "dependencies": {
-    "@types/webpack-env": "^1.14.0"
+    "@types/webpack-env": "^1.14.0",
+    "babel-plugin-transform-require-context": "^0.1.1"
   }
 }

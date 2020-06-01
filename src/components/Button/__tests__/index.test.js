@@ -1,8 +1,8 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Button from '../Button'
+import Button from '..'
 
-it('renders correctly', () => {
+it('Button exports modules correctly', () => {
   const button = renderer
     .create(<Button>button</Button>)
     .toJSON();
