@@ -30,7 +30,9 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - build
+            - build/lib
+            - package.json
+            - README.md
   test:
     <<: *defaults
     steps:
@@ -40,6 +42,14 @@ jobs:
       - run: yarn ci
       - store_test_results:
           path: test_results
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run: ls -l
+      - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+      - run: npm publish
 
 workflows:
   version: 2
@@ -52,3 +62,6 @@ workflows:
       - test:
           requires:
             - prepare
+      - publish:
+          requires:
+            - build
