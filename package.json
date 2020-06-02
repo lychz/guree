@@ -1,6 +1,6 @@
 {
   "name": "guree",
-  "version": "0.1.8",
+  "version": "0.1.11",
   "private": false,
   "main": "./build/lib/index.js",
   "types": "./build/lib/index.d.ts",
@@ -70,7 +70,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js & npx tsc -p tsconfig.json --emitDeclarationOnly",
+    "build": "node scripts/build.js && npx tsc -p tsconfig.json",
     "test": "node scripts/test.js",
     "ci": "cross-env CI=true yarn test",
     "styleguide": "styleguidist server",
