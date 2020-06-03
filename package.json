@@ -72,6 +72,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js && npx tsc -p tsconfig.json",
     "test": "node scripts/test.js",
+    "codecov": "codecov",
     "ci": "cross-env CI=true yarn test",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build"
@@ -152,7 +153,8 @@
   },
   "dependencies": {
     "@types/webpack-env": "^1.14.0",
-    "babel-plugin-transform-require-context": "^0.1.1"
+    "babel-plugin-transform-require-context": "^0.1.1",
+    "codecov": "^3.7.0"
   },
   "jest-junit": {
     "outputDirectory": "./test_results/jest",
