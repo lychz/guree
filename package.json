@@ -1,6 +1,6 @@
 {
   "name": "guree",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": false,
   "main": "./build/lib/index.js",
   "types": "./build/lib/index.d.ts",
