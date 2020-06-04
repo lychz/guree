@@ -15,4 +15,7 @@ module.exports = {
 		module: webpackConfig().module,
 	},
 	version,
+	propsParser: require('react-docgen-typescript').withCustomConfig(
+    './docgen-ts.json'
+  ).parse
 };

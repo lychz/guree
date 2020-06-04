@@ -10123,6 +10123,11 @@ react-docgen-displayname-handler@^2.1.1:
   dependencies:
     ast-types "0.11.5"
 
+react-docgen-typescript@^1.16.5:
+  version "1.16.5"
+  resolved "https://registry.npm.taobao.org/react-docgen-typescript/download/react-docgen-typescript-1.16.5.tgz#b305563425ab370f5a3c82b42579eb5069449b87"
+  integrity sha1-swVWNCWrNw9aPIK0JXnrUGlEm4c=
+
 react-docgen@3.0.0-rc.2:
   version "3.0.0-rc.2"
   resolved "http://registry.npm.taobao.org/react-docgen/download/react-docgen-3.0.0-rc.2.tgz#5939c64699fd9959da6d97d890f7b648e542dbcc"
