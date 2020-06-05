@@ -137,7 +137,8 @@
       "web.jsx",
       "jsx",
       "node"
-    ]
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/jest.setup.js"
   },
   "babel": {
     "presets": [
@@ -155,6 +156,8 @@
     "@types/webpack-env": "^1.14.0",
     "babel-plugin-transform-require-context": "^0.1.1",
     "codecov": "^3.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "react-docgen-typescript": "^1.16.5"
   },
   "jest-junit": {

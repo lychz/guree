@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`build files build exports modules correctly 1`] = `
+exports[`打包组件 正确导出组件包 1`] = `
 Array [
   "Button",
   "Icon",

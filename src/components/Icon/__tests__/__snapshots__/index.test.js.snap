@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon exports modules correctly 1`] = `
+exports[`Icon 组件 正确导出 Icon 组件 1`] = `
 <svg
   className="icon"
   style={
@@ -13,6 +13,57 @@ exports[`Icon exports modules correctly 1`] = `
 >
   <use
     xlinkHref="#adn"
+  />
+</svg>
+`;
+
+exports[`Icon 组件 测试 Icon 组件 fill 参数 1`] = `
+<svg
+  className="icon"
+  style={
+    Object {
+      "fill": "blue",
+      "height": "1em",
+      "width": "1em",
+    }
+  }
+>
+  <use
+    xlinkHref="#undefined"
+  />
+</svg>
+`;
+
+exports[`Icon 组件 测试 Icon 组件 size 参数 1`] = `
+<svg
+  className="icon"
+  style={
+    Object {
+      "fill": undefined,
+      "height": "10px",
+      "width": "10px",
+    }
+  }
+>
+  <use
+    xlinkHref="#undefined"
+  />
+</svg>
+`;
+
+exports[`Icon 组件 测试 Icon 组件 size 参数 2`] = `
+<svg
+  className="icon"
+  style={
+    Object {
+      "fill": undefined,
+      "height": "1em",
+      "width": "1em",
+    }
+  }
+>
+  <use
+    xlinkHref="#undefined"
   />
 </svg>
 `;
