@@ -3,6 +3,13 @@
 exports[`Icon exports modules correctly 1`] = `
 <svg
   className="icon"
+  style={
+    Object {
+      "fill": undefined,
+      "height": "1em",
+      "width": "1em",
+    }
+  }
 >
   <use
     xlinkHref="#adn"
