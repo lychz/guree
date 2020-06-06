@@ -6,7 +6,7 @@ module.exports = {
 	components: 'src/components/**/[A-Z]*.tsx',
 	defaultExample: true,
 	moduleAliases: {
-		'rsg-example': path.resolve(__dirname, 'src'),
+		'@': path.resolve(__dirname, 'src/components'),
 	},
 	ribbon: {
 		url: 'https://github.com/styleguidist/react-styleguidist',
