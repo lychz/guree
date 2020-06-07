@@ -10,9 +10,15 @@ describe("Button 组件", () => {
   });
 
   it("测试 Button 组件 size 参数", () => {
-    const largeButton = renderer.create(<Button size="large">large</Button>).toJSON();
-    const middleButton = renderer.create(<Button size="middle">middle</Button>).toJSON();
-    const smallButton = renderer.create(<Button size="small">small</Button>).toJSON();
+    const largeButton = renderer
+      .create(<Button size="large">large</Button>)
+      .toJSON();
+    const middleButton = renderer
+      .create(<Button size="middle">middle</Button>)
+      .toJSON();
+    const smallButton = renderer
+      .create(<Button size="small">small</Button>)
+      .toJSON();
 
     expect(largeButton).toMatchSnapshot();
     expect(middleButton).toMatchSnapshot();
@@ -35,11 +41,21 @@ describe("Button 组件", () => {
   });
 
   it("测试 Button 组件 type 参数", () => {
-    const defaultButton = renderer.create(<Button type="default">default</Button>).toJSON();
-    const primaryButton = renderer.create(<Button type="primary">primary</Button>).toJSON();
-    const dangerButton = renderer.create(<Button type="danger">danger</Button>).toJSON();
-    const warningButton = renderer.create(<Button type="warning">warning</Button>).toJSON();
-    const textButton = renderer.create(<Button type="text">text</Button>).toJSON();
+    const defaultButton = renderer
+      .create(<Button type="default">default</Button>)
+      .toJSON();
+    const primaryButton = renderer
+      .create(<Button type="primary">primary</Button>)
+      .toJSON();
+    const dangerButton = renderer
+      .create(<Button type="danger">danger</Button>)
+      .toJSON();
+    const warningButton = renderer
+      .create(<Button type="warning">warning</Button>)
+      .toJSON();
+    const textButton = renderer
+      .create(<Button type="text">text</Button>)
+      .toJSON();
 
     expect(defaultButton).toMatchSnapshot();
     expect(primaryButton).toMatchSnapshot();

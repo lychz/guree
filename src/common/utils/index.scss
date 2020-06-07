@@ -1,3 +1,3 @@
 @function scopedClass($className) {
-  @return 'guree-' + $className;
+  @return "guree-" + $className;
 }
