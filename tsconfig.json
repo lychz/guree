@@ -8,8 +8,8 @@
     ],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/components/*"],
-      "utils/*": ["src/common/utils/*"]
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/common/utils/*"]
     },
     "skipLibCheck": true,
     "esModuleInterop": true,
