@@ -2,7 +2,7 @@
 
 exports[`Icon 组件 正确导出 Icon 组件 1`] = `
 <svg
-  className="icon"
+  className="guree-icon"
   style={
     Object {
       "fill": undefined,
@@ -19,7 +19,7 @@ exports[`Icon 组件 正确导出 Icon 组件 1`] = `
 
 exports[`Icon 组件 测试 Icon 组件 fill 参数 1`] = `
 <svg
-  className="icon"
+  className="guree-icon"
   style={
     Object {
       "fill": "blue",
@@ -36,7 +36,7 @@ exports[`Icon 组件 测试 Icon 组件 fill 参数 1`] = `
 
 exports[`Icon 组件 测试 Icon 组件 size 参数 1`] = `
 <svg
-  className="icon"
+  className="guree-icon"
   style={
     Object {
       "fill": undefined,
@@ -53,7 +53,7 @@ exports[`Icon 组件 测试 Icon 组件 size 参数 1`] = `
 
 exports[`Icon 组件 测试 Icon 组件 size 参数 2`] = `
 <svg
-  className="icon"
+  className="guree-icon"
   style={
     Object {
       "fill": undefined,

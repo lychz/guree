@@ -31,7 +31,7 @@ exports[`Button 组件 测试 Button 组件 icon 参数 1`] = `
     className="action"
   >
     <svg
-      className="icon"
+      className="guree-icon"
       style={
         Object {
           "fill": undefined,
@@ -60,7 +60,7 @@ exports[`Button 组件 测试 Button 组件 loading 参数 1`] = `
     className="action"
   >
     <svg
-      className="icon"
+      className="guree-icon"
       style={
         Object {
           "fill": undefined,
