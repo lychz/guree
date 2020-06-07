@@ -1,9 +1,170 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button exports modules correctly 1`] = `
+exports[`Button 组件 正确导出 Button 组件 1`] = `
 <button
-  className="button"
+  className="guree-button middle default"
 >
-  button
+   
+  <span>
+    button
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 disabled 参数 1`] = `
+<button
+  className="guree-button middle default"
+  disabled={true}
+>
+   
+  <span>
+    disabled
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 icon 参数 1`] = `
+<button
+  className="guree-button middle default"
+>
+  <span
+    className="action"
+  >
+    <svg
+      className="icon"
+      style={
+        Object {
+          "fill": undefined,
+          "height": "1em",
+          "width": "1em",
+        }
+      }
+    >
+      <use
+        xlinkHref="#adn"
+      />
+    </svg>
+  </span>
+   
+  <span>
+    button
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 loading 参数 1`] = `
+<button
+  className="guree-button middle default"
+>
+  <span
+    className="action"
+  >
+    <svg
+      className="icon"
+      style={
+        Object {
+          "fill": undefined,
+          "height": "1em",
+          "width": "1em",
+        }
+      }
+    >
+      <use
+        xlinkHref="#spinner"
+      />
+    </svg>
+  </span>
+   
+  <span>
+    loading
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 size 参数 1`] = `
+<button
+  className="guree-button large default"
+>
+   
+  <span>
+    large
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 size 参数 2`] = `
+<button
+  className="guree-button middle default"
+>
+   
+  <span>
+    middle
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 size 参数 3`] = `
+<button
+  className="guree-button small default"
+>
+   
+  <span>
+    small
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 type 参数 1`] = `
+<button
+  className="guree-button middle default"
+>
+   
+  <span>
+    default
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 type 参数 2`] = `
+<button
+  className="guree-button middle primary"
+>
+   
+  <span>
+    primary
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 type 参数 3`] = `
+<button
+  className="guree-button middle danger"
+>
+   
+  <span>
+    danger
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 type 参数 4`] = `
+<button
+  className="guree-button middle warning"
+>
+   
+  <span>
+    warning
+  </span>
+</button>
+`;
+
+exports[`Button 组件 测试 Button 组件 type 参数 5`] = `
+<button
+  className="guree-button middle text"
+>
+   
+  <span>
+    text
+  </span>
 </button>
 `;
