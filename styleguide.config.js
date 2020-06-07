@@ -17,6 +17,9 @@ module.exports = {
 	},
 	version,
 	propsParser: require('react-docgen-typescript').withCustomConfig(
-    './docgen-ts.json'
+		'./docgen-ts.json',
+		{
+			shouldExtractLiteralValuesFromEnum: true,
+		}
   ).parse
 };
