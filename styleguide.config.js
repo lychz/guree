@@ -21,5 +21,8 @@ module.exports = {
 		{
 			shouldExtractLiteralValuesFromEnum: true,
 		}
-  ).parse
+	).parse,
+	require: [
+    path.join(__dirname, 'styleguide.styles.css')
+  ]
 };
