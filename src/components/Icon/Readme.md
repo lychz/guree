@@ -5,6 +5,7 @@
 使用 `name` 设置图标名称
 
 ```jsx
+import Row from '@components/Row';
 <Icon name="adn"></Icon>
 ```
 
@@ -13,6 +14,7 @@
 使用 `size` 设置图标大小
 
 ```jsx
+import Row from '@components/Row';
 const value = 40;
 <div>
   <Icon name="adn" size="0.5em"></Icon>

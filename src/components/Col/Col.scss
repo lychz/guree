@@ -1,0 +1,39 @@
+@import "../../common/utils/index.scss";
+
+$total: 24;
+
+@function columnOffset($col, $total:$total) {  
+  @return percentage($col/$total);  
+}
+
+.#{scopedClass(col)} {
+  max-width: 100%;
+  min-height: 1px;
+  position: relative;
+  @for $i from 1 to $total {
+    &-offset-#{$i} {
+      margin-left: columnOffset($i);
+    }
+
+    &-order-#{$i} {
+      order: $i;
+    }
+
+    &-push-#{$i} {
+      left: columnOffset($i);
+    }
+
+    &-pull-#{$i} {
+      right: columnOffset($i);
+    }
+
+    &-#{$i} {
+      display: block;
+      flex: 0 0 columnOffset($i);
+      max-width: columnOffset($i);
+    }
+  }
+  &-0 {
+    display: none
+  }
+}

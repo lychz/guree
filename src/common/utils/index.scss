@@ -1,3 +1,5 @@
+$preName: 'guree';
+
 @function scopedClass($className) {
   @return "guree-" + $className;
 }
