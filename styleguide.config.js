@@ -17,9 +17,18 @@ module.exports = {
 	},
 	version,
 	propsParser: require('react-docgen-typescript').withCustomConfig(
-		'./docgen-ts.json',
+		'./tsconfig.json',
 		{
 			shouldExtractLiteralValuesFromEnum: true,
+			savePropValueAsString: true,
+			shouldRemoveUndefinedFromOptional: true,
+			propFilter: (prop, component) => {
+				if (prop.parent) {
+					return !prop.parent.fileName.includes('node_modules')
+				}
+				
+				return true
+			}
 		}
 	).parse,
 	require: [
