@@ -3,3 +3,7 @@ $preName: 'guree';
 @function scopedClass($className) {
   @return "guree-" + $className;
 }
+
+[class*=guree] {
+  box-sizing: border-box;
+}

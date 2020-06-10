@@ -1,33 +1,33 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import "./Col.scss";
 import { combineClasses, scopedClass, classesObj } from "@utils/index";
-import { strict } from "assert";
+import RowContext from "@components/Row/context";
 
-type stringOrNumber = string | number;
-type responsiveAttributeType = stringOrNumber | ColSize;
+type StringOrNumber = string | number;
+type ResponsiveAttributeType = StringOrNumber | ColSize;
 
 interface ColSize extends Object {
-  offset?: stringOrNumber;
-  order?: stringOrNumber;
-  push?: stringOrNumber;
-  pull?: stringOrNumber;
-  span?: stringOrNumber;
+  offset?: StringOrNumber;
+  order?: StringOrNumber;
+  push?: StringOrNumber;
+  pull?: StringOrNumber;
+  span?: StringOrNumber;
 }
 
 interface Props {
   children?: React.ReactNode;
   flex?: string | number;
-  offset?: stringOrNumber;
+  offset?: StringOrNumber;
   order?: string | number;
   push?: string | number;
   pull?: string | number;
   span: string | number;
-  xs?: responsiveAttributeType;
-  sm?: responsiveAttributeType;
-  md?: responsiveAttributeType;
-  lg?: responsiveAttributeType;
-  xl?: responsiveAttributeType;
-  xxl?: responsiveAttributeType;
+  xs?: ResponsiveAttributeType;
+  sm?: ResponsiveAttributeType;
+  md?: ResponsiveAttributeType;
+  lg?: ResponsiveAttributeType;
+  xl?: ResponsiveAttributeType;
+  xxl?: ResponsiveAttributeType;
 }
 
 const Col: React.FunctionComponent<Props> = ({
@@ -45,7 +45,7 @@ const Col: React.FunctionComponent<Props> = ({
   xl,
   xxl,
 }: Props) => {
-  const style: React.CSSProperties = {
+  const flexStyle: CSSProperties = {
     flex,
   };
 
@@ -54,7 +54,7 @@ const Col: React.FunctionComponent<Props> = ({
 
   const generateReponsiveClassNames = (
     attributeName: string,
-    attributeValue: responsiveAttributeType
+    attributeValue: ResponsiveAttributeType
   ) => {
     if (
       typeof attributeValue === "string" ||
@@ -79,7 +79,7 @@ const Col: React.FunctionComponent<Props> = ({
   };
 
   const generateReponsiveClassNames2 = (obj: {
-    [k: string]: responsiveAttributeType | undefined;
+    [k: string]: ResponsiveAttributeType | undefined;
   }) => {
     return Object.entries(obj).map(([key, value]) => {
       if (value === undefined) {
@@ -98,7 +98,7 @@ const Col: React.FunctionComponent<Props> = ({
     xxl,
   });
 
-  const styleClassNames = (offset: stringOrNumber, order: stringOrNumber) =>
+  const styleClassNames = (offset: StringOrNumber, order: StringOrNumber) =>
     combineClasses(
       {
         [`${colClass("offset", `${offset}`)}`]: Boolean(offset),
@@ -113,9 +113,29 @@ const Col: React.FunctionComponent<Props> = ({
   const className = combineClasses(colClass(), styleClassNames(offset, order));
 
   return (
-    <div className={className} style={style}>
-      {children}
-    </div>
+    <RowContext.Consumer>
+      {({ horizontal, vertical }) => {
+        const gutterStyle: CSSProperties = {
+          ...(horizontal && horizontal > 0
+            ? {
+                paddingLeft: horizontal / 2,
+                paddingRight: horizontal / 2,
+              }
+            : {}),
+          ...(vertical && vertical! > 0
+            ? {
+                paddingTop: vertical / 2,
+                paddingBottom: vertical / 2,
+              }
+            : {}),
+        };
+        return (
+          <div className={className} style={{...flexStyle, ...gutterStyle}}>
+            {children}
+          </div>
+        );
+      }}
+    </RowContext.Consumer>
   );
 };
 

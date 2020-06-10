@@ -13,10 +13,10 @@ $total: 24;
 @mixin make-grid($responsive: "") {
   @for $i from 0 to $total + 1 {
     @if $i == 0 {
-      &-#{$responsive}offset-0 {
+      &#{$responsive}-offset-0 {
         margin-left: 0;
       }
-      &-#{$responsive}order-0 {
+      &#{$responsive}-order-0 {
         order: 0;
       }
       &-push-0 {
@@ -30,19 +30,19 @@ $total: 24;
         display: none;
       }
     } @else {
-      &-#{$responsive}-offset-#{$i} {
+      &#{$responsive}-offset-#{$i} {
         margin-left: columnOffset($i);
       }
-      &-#{$responsive}-order-#{$i} {
+      &#{$responsive}-order-#{$i} {
         order: $i;
       }
-      &-#{$responsive}-push-#{$i} {
+      &#{$responsive}-push-#{$i} {
         left: columnOffset($i);
       }
-      &-#{$responsive}-pull-#{$i} {
+      &#{$responsive}-pull-#{$i} {
         right: columnOffset($i);
       }
-      &-#{$responsive}-#{$i} {
+      &#{$responsive}-#{$i} {
         display: block;
         flex: 0 0 columnOffset($i);
         max-width: columnOffset($i);
@@ -58,26 +58,26 @@ $total: 24;
   @include make-grid();
   // xs
   @media only screen and (max-width: 576px) {
-    @include make-grid("xs");
+    @include make-grid("-xs");
   }
   // sm
   @media only screen and (min-width: 576px) {
-    @include make-grid("sm");
+    @include make-grid("-sm");
   }
   // md
   @media only screen and (min-width: 768px) {
-    @include make-grid("md");
+    @include make-grid("-md");
   }
   // lg
   @media only screen and (min-width: 992px) {
-    @include make-grid("lg");
+    @include make-grid("-lg");
   }
   // xl
   @media only screen and (min-width: 1200px) {
-    @include make-grid("xl");
+    @include make-grid("-xl");
   }
   // xxl
   @media only screen and (min-width: 1600px) {
-    @include make-grid("xxl");
+    @include make-grid("-xxl");
   }
 }
