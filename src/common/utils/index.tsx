@@ -25,7 +25,8 @@ const generateClassesList = (
           .map(([k, v]) => k);
       }
     })
-    .flat();
+    .flat()
+    .filter(Boolean);
 };
 
 const composeClasses = (...classes: (string | Array<string> | classesObj)[]) =>

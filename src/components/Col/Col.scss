@@ -2,38 +2,82 @@
 
 $total: 24;
 
-@function columnOffset($col, $total:$total) {  
-  @return percentage($col/$total);  
+@function columnOffset($col, $total: $total) {
+  @if $col == 0 {
+    @return 0;
+  } @else {
+    @return percentage($col/$total);
+  }
+}
+
+@mixin make-grid($responsive: "") {
+  @for $i from 0 to $total + 1 {
+    @if $i == 0 {
+      &-#{$responsive}offset-0 {
+        margin-left: 0;
+      }
+      &-#{$responsive}order-0 {
+        order: 0;
+      }
+      &-push-0 {
+        left: auto;
+      }
+
+      &-pull-0 {
+        right: auto;
+      }
+      &-0 {
+        display: none;
+      }
+    } @else {
+      &-#{$responsive}-offset-#{$i} {
+        margin-left: columnOffset($i);
+      }
+      &-#{$responsive}-order-#{$i} {
+        order: $i;
+      }
+      &-#{$responsive}-push-#{$i} {
+        left: columnOffset($i);
+      }
+      &-#{$responsive}-pull-#{$i} {
+        right: columnOffset($i);
+      }
+      &-#{$responsive}-#{$i} {
+        display: block;
+        flex: 0 0 columnOffset($i);
+        max-width: columnOffset($i);
+      }
+    }
+  }
 }
 
 .#{scopedClass(col)} {
   max-width: 100%;
   min-height: 1px;
   position: relative;
-  @for $i from 1 to $total {
-    &-offset-#{$i} {
-      margin-left: columnOffset($i);
-    }
-
-    &-order-#{$i} {
-      order: $i;
-    }
-
-    &-push-#{$i} {
-      left: columnOffset($i);
-    }
-
-    &-pull-#{$i} {
-      right: columnOffset($i);
-    }
-
-    &-#{$i} {
-      display: block;
-      flex: 0 0 columnOffset($i);
-      max-width: columnOffset($i);
-    }
+  @include make-grid();
+  // xs
+  @media only screen and (max-width: 576px) {
+    @include make-grid("xs");
   }
-  &-0 {
-    display: none
+  // sm
+  @media only screen and (min-width: 576px) {
+    @include make-grid("sm");
+  }
+  // md
+  @media only screen and (min-width: 768px) {
+    @include make-grid("md");
+  }
+  // lg
+  @media only screen and (min-width: 992px) {
+    @include make-grid("lg");
+  }
+  // xl
+  @media only screen and (min-width: 1200px) {
+    @include make-grid("xl");
+  }
+  // xxl
+  @media only screen and (min-width: 1600px) {
+    @include make-grid("xxl");
   }
 }
