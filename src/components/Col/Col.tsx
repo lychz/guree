@@ -4,7 +4,7 @@ import { combineClasses, scopedClass, classesObj } from "@utils/index";
 import RowContext from "@components/Row/context";
 
 type StringOrNumber = string | number;
-type ResponsiveAttributeType = StringOrNumber | ColSize;
+type ResponsiveAttributeType = StringOrNumber | Object;
 
 interface ColSize extends Object {
   offset?: StringOrNumber;
@@ -16,17 +16,29 @@ interface ColSize extends Object {
 
 interface Props {
   children?: React.ReactNode;
+  /** flex 布局属性 */
   flex?: StringOrNumber;
+  /** 栅格左侧的间隔格数 */
   offset?: StringOrNumber;
+  /** 栅格顺序 */
   order?: StringOrNumber;
+  /** 栅格向右移动格数 */
   push?: StringOrNumber;
+  /** 栅格向左移动格数 */
   pull?: StringOrNumber;
-  span: StringOrNumber;
+  /** 栅格占位格数，为 0 时等于 display: none */
+  span?: StringOrNumber;
+  /** <576px 响应式栅格，可为栅格数或一个包含其他属性的对象 */
   xs?: ResponsiveAttributeType;
+  /** ≥576px 响应式栅格，可为栅格数或一个包含其他属性的对象 */
   sm?: ResponsiveAttributeType;
+  /** ≥768px 响应式栅格，可为栅格数或一个包含其他属性的对象 */
   md?: ResponsiveAttributeType;
+  /** ≥992px 响应式栅格，可为栅格数或一个包含其他属性的对象 */
   lg?: ResponsiveAttributeType;
+  /** ≥1200px 响应式栅格，可为栅格数或一个包含其他属性的对象	 */
   xl?: ResponsiveAttributeType;
+  /** ≥1600px 响应式栅格，可为栅格数或一个包含其他属性的对象 */
   xxl?: ResponsiveAttributeType;
 }
 
@@ -67,7 +79,7 @@ const Col: React.FunctionComponent<Props> = ({
       };
     } else {
       // typeof attributeValue => "object"
-      const { offset, order, push, pull, span } = attributeValue;
+      const { offset, order, push, pull, span } = attributeValue as ColSize;
       return {
         [`${colClass(`${attributeName}-offset`, `${offset}`)}`]: true,
         [`${colClass(`${attributeName}-order`, `${order}`)}`]: true,
@@ -97,19 +109,24 @@ const Col: React.FunctionComponent<Props> = ({
     xl,
     xxl,
   });
-
-  const styleClassNames = (offset: StringOrNumber, order: StringOrNumber) =>
-    combineClasses(
+  
+  const styleClassNames = (offset: StringOrNumber, order: StringOrNumber) =>{
+    return combineClasses(
       {
         [`${colClass("offset", `${offset}`)}`]: Boolean(offset),
         [`${colClass("order", `${order}`)}`]: Boolean(order),
         [`${colClass("push", `${push}`)}`]: Boolean(push),
         [`${colClass("pull", `${pull}`)}`]: Boolean(pull),
-        [`${colClass(`${span}`)}`]: true,
       },
+      (typeof span === "undefined")
+        ? {}
+        : {
+          [`${colClass(`${span}`)}`]: true,
+        },
       ...reponsiveClassNames
     );
-
+  }
+    
   const className = combineClasses(colClass(), styleClassNames(offset, order));
 
   return (
@@ -130,7 +147,7 @@ const Col: React.FunctionComponent<Props> = ({
             : {}),
         };
         return (
-          <div className={className} style={{...flexStyle, ...gutterStyle}}>
+          <div className={className} style={{ ...flexStyle, ...gutterStyle }}>
             {children}
           </div>
         );

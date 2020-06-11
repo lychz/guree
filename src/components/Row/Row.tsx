@@ -1,24 +1,32 @@
 import React, { ReactNode, useState, CSSProperties } from "react";
 import "./Row.scss";
-import { combineClasses, scopedClass, classesObj, mediaAddLinstener } from "@utils/index";
+import {
+  combineClasses,
+  scopedClass,
+  classesObj,
+  mediaAddLinstener,
+} from "@utils/index";
 import RowContext from "@components/Row/context";
 
-type GutterType =
-  | number
-  | {
-      xs?: number;
-      sm?: number;
-      md?: number;
-      lg?: number;
-      xl?: number;
-      xxl?: number;
-    };
+interface responsiveType {
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  xxl?: number;
+}
+
+type GutterType = number | Object;
 
 interface Props {
   children?: ReactNode;
+  /** 垂直布局属性 */
   align?: "top" | "middle" | "bottom";
+  /** 水平布局属性 */
   justify?: "start" | "end" | "center" | "space-around" | "space-between";
-  gutter?: GutterType | [GutterType, GutterType];
+  /** 间隔属性，传入 number 时为水平间隔，传入数组为 [水平间隔，垂直间隔]，传入 Object 可以设置响应式间隔 */
+  gutter?: GutterType | Array<Number | Object>;
 }
 
 const Row: React.FunctionComponent<Props> = ({

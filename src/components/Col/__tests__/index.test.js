@@ -19,8 +19,8 @@ describe("Col", () => {
     const col = renderer
       .create(
         <Row>
-          <Col span={4} flex="1 1"></Col>
-          <Col span={4} flex={1}></Col>
+          <Col flex="1 1"></Col>
+          <Col flex={1}></Col>
         </Row>
       )
       .toJSON();

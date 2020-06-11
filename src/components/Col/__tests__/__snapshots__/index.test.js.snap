@@ -22,7 +22,7 @@ exports[`Col 测试 Col 组件 flex 参数 1`] = `
   style={Object {}}
 >
   <div
-    className="guree-col guree-col-4"
+    className="guree-col"
     style={
       Object {
         "flex": "1 1",
@@ -30,7 +30,7 @@ exports[`Col 测试 Col 组件 flex 参数 1`] = `
     }
   />
   <div
-    className="guree-col guree-col-4"
+    className="guree-col"
     style={
       Object {
         "flex": 1,

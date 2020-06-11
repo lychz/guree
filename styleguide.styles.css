@@ -1,6 +1,32 @@
 .guree-row {
-  min-height: 30px;
+  min-height: 36px;
 }
-.guree-col {
-  background-color: #0092ff;
+.grid-demo .guree-col {
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 36px;
+}
+.grid-demo .guree-col:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
+.grid-demo .guree-col:nth-child(2n) {
+  background-color: #e5e9f2;
+}
+.grid-row-demo .guree-col{
+  margin: 8px 0;
+}
+.grid-gutter-demo .guree-col {
+  background: transparent;
+}
+.grid-gutter-demo .guree-col .grid-item{
+  width: 100%;
+  height: 100%;
+}
+.grid-gutter-demo .guree-col .grid-item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
+.grid-gutter-demo .guree-col .grid-item:nth-child(2n) {
+  background-color: #e5e9f2;
 }
