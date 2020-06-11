@@ -1,4 +1,4 @@
-<!-- ### 基本用法
+### 基本用法
 
 ```jsx
 import Row from "@components/Row";
@@ -12,7 +12,7 @@ import Row from "@components/Row";
     <Col span={4}></Col>
   </Row>
 </div>;
-``` -->
+```
 
 ### flex 布局
 
@@ -27,7 +27,7 @@ import Row from "@components/Row";
 </div>;
 ```
 
-<!-- ### 左侧间隔
+### 左侧间隔
 
 ```jsx
 import Row from "@components/Row";
@@ -83,4 +83,4 @@ import Row from "@components/Row";
     <Col span={4} xs={6} sm={5} md={4} lg={3} xl={2} xxl={1}></Col>
   </Row>
 </div>;
-``` -->
+```
