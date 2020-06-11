@@ -85,7 +85,7 @@ import Col from "@components/Col";
   <Col className="gutter-row" span={6}>
     col-6
   </Col>
-</Row>
+</Row>;
 ```
 
 ```jsx
@@ -115,5 +115,40 @@ import Col from "@components/Col";
   <Col className="gutter-row" span={6}>
     col-6
   </Col>
-</Row>
+</Row>;
+```
+
+```jsx
+import Col from "@components/Col";
+<Row
+  gutter={[
+    { xs: 2, sm: 4, md: 6, lg: 8, xl: 10, xxl: 12 },
+    { xs: 14, sm: 16, md: 18, lg: 20, xl: 22, xxl: 24 },
+  ]}
+>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+  <Col className="gutter-row" span={6}>
+    col-6
+  </Col>
+</Row>;
 ```

@@ -16,12 +16,12 @@ interface ColSize extends Object {
 
 interface Props {
   children?: React.ReactNode;
-  flex?: string | number;
+  flex?: StringOrNumber;
   offset?: StringOrNumber;
-  order?: string | number;
-  push?: string | number;
-  pull?: string | number;
-  span: string | number;
+  order?: StringOrNumber;
+  push?: StringOrNumber;
+  pull?: StringOrNumber;
+  span: StringOrNumber;
   xs?: ResponsiveAttributeType;
   sm?: ResponsiveAttributeType;
   md?: ResponsiveAttributeType;

@@ -1,6 +1,6 @@
 import React, { ReactNode, useState, CSSProperties } from "react";
 import "./Row.scss";
-import { combineClasses, scopedClass, classesObj } from "@utils/index";
+import { combineClasses, scopedClass, classesObj, mediaAddLinstener } from "@utils/index";
 import RowContext from "@components/Row/context";
 
 type GutterType =
@@ -84,13 +84,7 @@ const Row: React.FunctionComponent<Props> = ({
     }
     Object.entries(gutter).forEach(([mediaKey, mediaValue]) => {
       const mql = window.matchMedia(MediaMap[mediaKey]);
-      mql.addListener((e) => {
-        if (e.matches) {
-          cb({
-            [key]: mediaValue || 0,
-          });
-        }
-      });
+      mql.addListener(mediaAddLinstener(cb, key, mediaValue));
     });
   };
 

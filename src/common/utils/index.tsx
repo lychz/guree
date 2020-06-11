@@ -38,4 +38,24 @@ const combineClasses = (...classes: (string | Array<string> | classesObj)[]) =>
 const scopedClass = (...classes: (string | Array<string> | classesObj)[]) =>
   composeClasses("guree", ...classes);
 
-export { composeClasses, combineClasses, scopedClass };
+const mediaAddLinstener = (
+  cb: Function,
+  key: string,
+  mediaValue: number | undefined
+) => {
+  return (e: { matches: Boolean }) => {
+    if (e.matches) {
+      cb({
+        [key]: mediaValue || 0,
+      });
+    }
+  };
+};
+
+export {
+  generateClassesList,
+  composeClasses,
+  combineClasses,
+  scopedClass,
+  mediaAddLinstener,
+};
