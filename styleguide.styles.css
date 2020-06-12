@@ -1,5 +1,9 @@
-.rsg--type-60 {
-  white-space: nowrap !important;
+td:nth-child(2) {
+  max-width: 500px !important;
+  min-width: 300px !important;
+}
+td > span{
+  /* white-space: nowrap !important; */
 }
 .grid-demo .guree-row {
   min-height: 36px;
