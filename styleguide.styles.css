@@ -1,4 +1,7 @@
-.guree-row {
+.rsg--type-60 {
+  white-space: nowrap !important;
+}
+.grid-demo .guree-row {
   min-height: 36px;
 }
 .grid-demo .guree-col {
