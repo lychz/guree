@@ -91,33 +91,26 @@ describe("mediaAddLinstener", () => {
   it("测试 mediaValue 为 number 类型参数", () => {
     mediaAddLinstener(
       fn,
-      "key",
       1
     )({
       matches: true,
     });
-    expect(fn).toHaveBeenCalledWith({
-      key: 1,
-    });
+    expect(fn).toHaveBeenCalledWith(1);
   });
 
   it("测试 mediaValue 为 undefined 类型参数", () => {
     mediaAddLinstener(
       fn,
-      "key",
       undefined
     )({
       matches: true,
     });
-    expect(fn).toHaveBeenCalledWith({
-      key: 0,
-    });
+    expect(fn).toHaveBeenCalledWith(0);
   });
 
   it("测试 matches 为 false 类型参数", () => {
     mediaAddLinstener(
       fn,
-      "key",
       1
     )({
       matches: false,

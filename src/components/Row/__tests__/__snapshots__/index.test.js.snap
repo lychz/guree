@@ -185,20 +185,13 @@ exports[`Row 测试 Row 组件 gutter 参数 1`] = `
 exports[`Row 测试 Row 组件 gutter 参数 2`] = `
 <div
   className="guree-row"
-  style={
-    Object {
-      "marginLeft": -16,
-      "marginRight": -16,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="guree-col guree-col-6"
     style={
       Object {
         "flex": undefined,
-        "paddingLeft": 16,
-        "paddingRight": 16,
       }
     }
   >
@@ -209,8 +202,6 @@ exports[`Row 测试 Row 组件 gutter 参数 2`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingLeft": 16,
-        "paddingRight": 16,
       }
     }
   >
@@ -221,8 +212,6 @@ exports[`Row 测试 Row 组件 gutter 参数 2`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingLeft": 16,
-        "paddingRight": 16,
       }
     }
   >
@@ -233,8 +222,6 @@ exports[`Row 测试 Row 组件 gutter 参数 2`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingLeft": 16,
-        "paddingRight": 16,
       }
     }
   >
@@ -317,24 +304,13 @@ exports[`Row 测试 Row 组件 gutter 参数 3`] = `
 exports[`Row 测试 Row 组件 gutter 参数 4`] = `
 <div
   className="guree-row"
-  style={
-    Object {
-      "marginBottom": 10,
-      "marginLeft": -4,
-      "marginRight": -4,
-      "marginTop": -10,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="guree-col guree-col-6"
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -345,10 +321,6 @@ exports[`Row 测试 Row 组件 gutter 参数 4`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -359,10 +331,6 @@ exports[`Row 测试 Row 组件 gutter 参数 4`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -373,10 +341,6 @@ exports[`Row 测试 Row 组件 gutter 参数 4`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -507,24 +471,13 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 575 1`] = `
 exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 576 1`] = `
 <div
   className="guree-row"
-  style={
-    Object {
-      "marginBottom": 8,
-      "marginLeft": -2,
-      "marginRight": -2,
-      "marginTop": -8,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="guree-col guree-col-6"
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 8,
-        "paddingLeft": 2,
-        "paddingRight": 2,
-        "paddingTop": 8,
       }
     }
   >
@@ -535,10 +488,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 576 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 8,
-        "paddingLeft": 2,
-        "paddingRight": 2,
-        "paddingTop": 8,
       }
     }
   >
@@ -549,10 +498,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 576 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 8,
-        "paddingLeft": 2,
-        "paddingRight": 2,
-        "paddingTop": 8,
       }
     }
   >
@@ -563,10 +508,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 576 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 8,
-        "paddingLeft": 2,
-        "paddingRight": 2,
-        "paddingTop": 8,
       }
     }
   >
@@ -578,24 +519,13 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 576 1`] = `
 exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 768 1`] = `
 <div
   className="guree-row"
-  style={
-    Object {
-      "marginBottom": 9,
-      "marginLeft": -3,
-      "marginRight": -3,
-      "marginTop": -9,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="guree-col guree-col-6"
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 9,
-        "paddingLeft": 3,
-        "paddingRight": 3,
-        "paddingTop": 9,
       }
     }
   >
@@ -606,10 +536,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 768 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 9,
-        "paddingLeft": 3,
-        "paddingRight": 3,
-        "paddingTop": 9,
       }
     }
   >
@@ -620,10 +546,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 768 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 9,
-        "paddingLeft": 3,
-        "paddingRight": 3,
-        "paddingTop": 9,
       }
     }
   >
@@ -634,10 +556,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 768 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 9,
-        "paddingLeft": 3,
-        "paddingRight": 3,
-        "paddingTop": 9,
       }
     }
   >
@@ -649,24 +567,13 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 768 1`] = `
 exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 992 1`] = `
 <div
   className="guree-row"
-  style={
-    Object {
-      "marginBottom": 10,
-      "marginLeft": -4,
-      "marginRight": -4,
-      "marginTop": -10,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="guree-col guree-col-6"
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -677,10 +584,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 992 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -691,10 +594,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 992 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -705,10 +604,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 992 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 10,
-        "paddingLeft": 4,
-        "paddingRight": 4,
-        "paddingTop": 10,
       }
     }
   >
@@ -720,24 +615,13 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 992 1`] = `
 exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 1200 1`] = `
 <div
   className="guree-row"
-  style={
-    Object {
-      "marginBottom": 11,
-      "marginLeft": -5,
-      "marginRight": -5,
-      "marginTop": -11,
-    }
-  }
+  style={Object {}}
 >
   <div
     className="guree-col guree-col-6"
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 11,
-        "paddingLeft": 5,
-        "paddingRight": 5,
-        "paddingTop": 11,
       }
     }
   >
@@ -748,10 +632,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 1200 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 11,
-        "paddingLeft": 5,
-        "paddingRight": 5,
-        "paddingTop": 11,
       }
     }
   >
@@ -762,10 +642,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 1200 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 11,
-        "paddingLeft": 5,
-        "paddingRight": 5,
-        "paddingTop": 11,
       }
     }
   >
@@ -776,10 +652,6 @@ exports[`Row 测试 Row 组件 gutter 参数, window.innerWidth 为 1200 1`] = `
     style={
       Object {
         "flex": undefined,
-        "paddingBottom": 11,
-        "paddingLeft": 5,
-        "paddingRight": 5,
-        "paddingTop": 11,
       }
     }
   >
