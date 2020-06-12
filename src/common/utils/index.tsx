@@ -40,14 +40,11 @@ const scopedClass = (...classes: (string | Array<string> | classesObj)[]) =>
 
 const mediaAddLinstener = (
   cb: Function,
-  key: string,
   mediaValue: number | undefined
 ) => {
   return (e: { matches: Boolean }) => {
     if (e.matches) {
-      cb({
-        [key]: mediaValue || 0,
-      });
+      cb(mediaValue || 0);
     }
   };
 };

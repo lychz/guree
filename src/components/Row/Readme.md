@@ -96,7 +96,7 @@ import Col from "@components/Col";
 ```
 
 ### 间隔
-
+支持响应式
 ```jsx
 import Col from "@components/Col";
 <div className="grid-demo grid-gutter-demo">

@@ -42,10 +42,10 @@ const Row: React.FunctionComponent<Props> = ({
     [k: string]: string;
   } = {
     xs: "(max-width: 576px)",
-    sm: "(min-width: 576px)",
-    md: "(min-width: 768px)",
-    lg: "(min-width: 992px)",
-    xl: "(min-width: 1200px)",
+    sm: "(min-width: 576px) and (max-width: 768px)",
+    md: "(min-width: 768px) and (max-width: 992px)",
+    lg: "(min-width: 992px) and (max-width: 1200px)",
+    xl: "(min-width: 1200px) and (max-width: 1600px)",
     xxl: "(min-width: 1600px)",
   };
 
@@ -84,40 +84,35 @@ const Row: React.FunctionComponent<Props> = ({
     };
   };
 
-  const [{ horizontal, vertical }, setState] = useState(getGutter(gutter));
+  const curGutter = getGutter(gutter);
+  const [horizontal, setHorizontalState] = useState(curGutter.horizontal);
+  const [vertical, setVerticalState] = useState(curGutter.vertical);
 
-  const responiveGutter = (gutter: GutterType, cb: Function, key: string) => {
+  const responiveGutter = (gutter: GutterType, cb: Function) => {
     if (typeof gutter === "number") {
       return gutter;
     }
     Object.entries(gutter).forEach(([mediaKey, mediaValue]) => {
       const mql = window.matchMedia(MediaMap[mediaKey]);
-      mql.addListener(mediaAddLinstener(cb, key, mediaValue));
+      mql.addListener(mediaAddLinstener(cb, mediaValue));
     });
   };
 
   const bindGutter = (
-    gutter: GutterType | [GutterType, GutterType] | undefined,
-    setState: React.Dispatch<
-      React.SetStateAction<{
-        horizontal: number;
-        vertical: number;
-      }>
-    >
+    gutter: GutterType | [GutterType, GutterType] | undefined
   ) => {
     if (typeof gutter === "undefined") {
       return;
     }
     if (Array.isArray(gutter)) {
-      gutter.forEach((x, i) => {
-        responiveGutter(x, setState, ["horizontal", "vertical"][i]);
-      });
+      responiveGutter(gutter[0], setHorizontalState);
+      responiveGutter(gutter[1], setVerticalState);
     } else {
-      responiveGutter(gutter, setState, "horizontal");
+      responiveGutter(gutter, setHorizontalState);
     }
   };
 
-  bindGutter(gutter, setState);
+  bindGutter(gutter);
 
   const styleClassNames = (align?: string, justify?: string) => {
     return combineClasses({
