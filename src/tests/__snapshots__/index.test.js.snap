@@ -4,5 +4,7 @@ exports[`打包组件 正确导出组件包 1`] = `
 Array [
   "Button",
   "Icon",
+  "Row",
+  "Col",
 ]
 `;
