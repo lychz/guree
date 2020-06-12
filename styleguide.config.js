@@ -37,7 +37,7 @@ module.exports = {
 	sections: [
     {
       name: '介绍',
-      content: 'introduction.md'
+      content: 'introduction.md',
     },
     {
       name: '基础组件',

@@ -99,7 +99,7 @@ import Col from "@components/Col";
 
 ```jsx
 import Col from "@components/Col";
-<div className="grid-gutter-demo">
+<div className="grid-demo grid-gutter-demo">
   <Row
     gutter={[
       { xs: 2, sm: 4, md: 6, lg: 8, xl: 10, xxl: 12 },
