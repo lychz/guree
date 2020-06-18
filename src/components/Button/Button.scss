@@ -48,4 +48,9 @@
     opacity: 0.35;
     cursor: default;
   }
+
+  &:focus{
+    outline: none;
+    opacity: 0.8;
+  }
 }
