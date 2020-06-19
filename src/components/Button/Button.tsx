@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import "./Button.scss";
 import Icon from "@components/Icon";
-import { scopedClass } from "@utils/index";
+import { combineClasses, scopedClass, classesObj } from "@utils/index";
 
 type sizeType = "large" | "middle" | "small";
 interface Props {
@@ -29,10 +29,18 @@ const Button: React.FunctionComponent<Props> = ({
   type = "default",
   onClick,
 }: Props) => {
-  const className = (size: sizeType) => scopedClass(`button ${size} ${type}`);
+  const buttonClass = (...classes: (string | Array<string> | classesObj)[]) => {
+    return scopedClass("button", ...classes);
+  };
+  const className = (size: sizeType) =>
+    combineClasses(
+      buttonClass(),
+      buttonClass(`${size}`),
+      buttonClass(`${type}`)
+    );
   const iconName = loading ? "spinner" : icon;
   const IconNode = iconName && (
-    <span className="action">
+    <span className={buttonClass("action")}>
       <Icon name={iconName}></Icon>
     </span>
   );
