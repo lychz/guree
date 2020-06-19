@@ -34,7 +34,7 @@ const $modal = ({
   };
 
   document.body.appendChild(container);
-  ReactDOM.render(
+  const modal = (
     <Modal
       children={children}
       mask={mask}
@@ -47,12 +47,13 @@ const $modal = ({
       closeable={closeable}
       cancelContent={cancelContent}
       confirmContent={confirmContent}
-    ></Modal>,
-    container
+    ></Modal>
   );
+  ReactDOM.render(modal, container);
 
   return {
     close,
+    modal,
   };
 };
 
@@ -92,6 +93,10 @@ const $alert = ({
     onCancel: onCancel,
     footer,
   });
+
+  return {
+    modal: modal.modal
+  }
 };
 
 const $confirm = ({
@@ -103,7 +108,7 @@ const $confirm = ({
   cancelContent,
   confirmContent,
 }: ConfirmProps) => {
-  $modal({
+  const modal =  $modal({
     children: content,
     closeOnClickMask,
     title,
@@ -112,6 +117,10 @@ const $confirm = ({
     cancelContent,
     confirmContent,
   });
+
+  return {
+    modal: modal.modal
+  }
 };
 
 export { $modal, $alert, $confirm };

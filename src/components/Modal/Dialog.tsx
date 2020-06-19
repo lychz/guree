@@ -7,14 +7,14 @@ interface Props {
   children?: ReactNode;
   mask?: boolean;
   onClickMask?: React.MouseEventHandler<HTMLElement>;
-  visible: boolean;
+  visible?: boolean;
 }
 
 const Dialog: React.FunctionComponent<Props> = ({
   children,
-  mask = true,
+  mask,
   onClickMask,
-  visible = false,
+  visible,
 }: Props) => {
   const modalClass = (...classes: (string | Array<string> | classesObj)[]) =>
     scopedClass("modal", ...classes);
@@ -32,7 +32,7 @@ const Dialog: React.FunctionComponent<Props> = ({
       {mask ? (
         <div
           className={maskClassNames}
-          onClick={onClickMask ? onClickMask : () => {}}
+          onClick={onClickMask}
         ></div>
       ) : null}
       <div className={modalClassNames}>{children}</div>

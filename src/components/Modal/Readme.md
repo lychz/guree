@@ -202,13 +202,15 @@ const confirmHandler = (e) => {
   <Button onClick={showModal}>show</Button>
 
   <Modal
-    title="warnning"
+    title="title"
     visible={visible}
     onCancel={cancelHandler}
     onConfirm={confirmHandler}
     closeable={false}
   >
-    <p>Are you sure ?</p>
+    <div>some things</div>
+    <div>some things</div>
+    <div>some things</div>
   </Modal>
 </div>;
 ```
@@ -235,7 +237,18 @@ const showModal = () => {
     title: "title",
     onCancel: cancelHandler,
     onConfirm: confirmHandler,
-    children: <div>modal content <Button onClick={() => {modal.close()}}>close me</Button></div>,
+    children: (
+      <div>
+        modal content
+        <Button
+          onClick={() => {
+            modal.close();
+          }}
+        >
+          close me
+        </Button>
+      </div>
+    ),
   });
 };
 

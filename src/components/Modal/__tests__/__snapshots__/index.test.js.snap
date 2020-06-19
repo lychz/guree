@@ -1,0 +1,683 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal 组件 正确导出 Modal 组件 1`] = `
+Array [
+  <div
+    className="guree-modal-mask guree-modal-hidden"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal guree-modal-hidden"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      />
+    </div>
+    <div
+      className="guree-modal-body"
+    />
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件 测试 Modal 组件 cancelContent 参数 1`] = `
+Array [
+  <div
+    className="guree-modal-mask guree-modal-hidden"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal guree-modal-hidden"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      />
+    </div>
+    <div
+      className="guree-modal-body"
+    />
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          cancel content
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件 测试 Modal 组件 closeable 参数 1`] = `
+Array [
+  <div
+    className="guree-modal-mask guree-modal-hidden"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal guree-modal-hidden"
+  >
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      />
+    </div>
+    <div
+      className="guree-modal-body"
+    />
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件 测试 Modal 组件 confirmContent 参数 1`] = `
+Array [
+  <div
+    className="guree-modal-mask guree-modal-hidden"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal guree-modal-hidden"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      />
+    </div>
+    <div
+      className="guree-modal-body"
+    />
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          confirm content
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件 测试 Modal 组件 footer 参数 1`] = `
+Array [
+  <div
+    className="guree-modal-mask guree-modal-hidden"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal guree-modal-hidden"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      />
+    </div>
+    <div
+      className="guree-modal-body"
+    />
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+      >
+         
+        <span>
+          NO
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-danger"
+      >
+         
+        <span>
+          Yes
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件 测试 Modal 组件 mask 参数 1`] = `
+<div
+  className="guree-modal guree-modal-hidden"
+>
+  <div
+    className="guree-modal-close"
+    onClick={[Function]}
+  >
+    <svg
+      className="guree-icon"
+      style={
+        Object {
+          "fill": undefined,
+          "height": "1em",
+          "width": "1em",
+        }
+      }
+    >
+      <use
+        xlinkHref="#times"
+      />
+    </svg>
+  </div>
+  <div
+    className="guree-modal-header"
+  >
+    <div
+      className="guree-modal-title"
+    />
+  </div>
+  <div
+    className="guree-modal-body"
+  />
+  <div
+    className="guree-modal-footer"
+  >
+    <button
+      className="guree-button guree-button-middle guree-button-default"
+      onClick={[Function]}
+    >
+       
+      <span>
+        取消
+      </span>
+    </button>
+    <button
+      className="guree-button guree-button-middle guree-button-primary"
+      onClick={[Function]}
+    >
+       
+      <span>
+        确定
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Modal 组件 测试 Modal 组件 title 参数 1`] = `
+Array [
+  <div
+    className="guree-modal-mask guree-modal-hidden"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal guree-modal-hidden"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      >
+        title
+      </div>
+    </div>
+    <div
+      className="guree-modal-body"
+    />
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件 测试 Modal 组件 visible 参数 1`] = `
+Array [
+  <div
+    className="guree-modal-mask"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      />
+    </div>
+    <div
+      className="guree-modal-body"
+    />
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件的高阶组件 测试 $alert 组件 1`] = `
+Array [
+  <div
+    className="guree-modal-mask"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      >
+        alert title
+      </div>
+    </div>
+    <div
+      className="guree-modal-body"
+    >
+      alert content
+    </div>
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件的高阶组件 测试 $confirm 组件 1`] = `
+Array [
+  <div
+    className="guree-modal-mask"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      >
+        confirm title
+      </div>
+    </div>
+    <div
+      className="guree-modal-body"
+    >
+      confirm content
+    </div>
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Modal 组件的高阶组件 测试 $modal 组件 1`] = `
+Array [
+  <div
+    className="guree-modal-mask"
+    onClick={[Function]}
+  />,
+  <div
+    className="guree-modal"
+  >
+    <div
+      className="guree-modal-close"
+      onClick={[Function]}
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": undefined,
+            "height": "1em",
+            "width": "1em",
+          }
+        }
+      >
+        <use
+          xlinkHref="#times"
+        />
+      </svg>
+    </div>
+    <div
+      className="guree-modal-header"
+    >
+      <div
+        className="guree-modal-title"
+      >
+        title
+      </div>
+    </div>
+    <div
+      className="guree-modal-body"
+    >
+      modal content
+    </div>
+    <div
+      className="guree-modal-footer"
+    >
+      <button
+        className="guree-button guree-button-middle guree-button-default"
+        onClick={[Function]}
+      >
+         
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        className="guree-button guree-button-middle guree-button-primary"
+        onClick={[Function]}
+      >
+         
+        <span>
+          确定
+        </span>
+      </button>
+    </div>
+  </div>,
+]
+`;
