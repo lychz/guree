@@ -1,9 +1,87 @@
-$preName: 'guree';
+$preName: "guree";
 
 @function scopedClass($className) {
   @return "guree-" + $className;
 }
 
-[class*=guree] {
+[class*="guree"] {
   box-sizing: border-box;
+}
+
+@mixin flex($flex: flex, $justify-content: center, $align-items: center) {
+  display: $flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin flex-start-start {
+  @include flex(flex, flex-start, flex-start);
+}
+
+@mixin flex-start-center {
+  @include flex(flex, flex-start, center);
+}
+
+@mixin flex-start-end {
+  @include flex(flex, flex-start, flex-end);
+}
+
+@mixin flex-center-start {
+  @include flex(flex, center, flex-start);
+}
+
+@mixin flex-center-center {
+  @include flex(flex, center, center);
+}
+
+@mixin flex-center-end {
+  @include flex(flex, center, flex-end);
+}
+
+@mixin flex-end-start {
+  @include flex(flex, flex-end, flex-start);
+}
+
+@mixin flex-end-center {
+  @include flex(flex, flex-end, center);
+}
+
+@mixin flex-end-end {
+  @include flex(flex, flex-end, flex-end);
+}
+
+@mixin inline-flex-start-start {
+  @include flex(inline-flex, flex-start, flex-start);
+}
+
+@mixin inline-flex-start-center {
+  @include flex(inline-flex, flex-start, center);
+}
+
+@mixin inline-flex-start-end {
+  @include flex(inline-flex, flex-start, flex-end);
+}
+
+@mixin inline-flex-center-start {
+  @include flex(inline-flex, center, flex-start);
+}
+
+@mixin inline-flex-center-center {
+  @include flex(inline-flex, center, center);
+}
+
+@mixin inline-flex-center-end {
+  @include flex(inline-flex, center, flex-end);
+}
+
+@mixin inline-flex-end-start {
+  @include flex(inline-flex, flex-end, flex-start);
+}
+
+@mixin inline-flex-end-center {
+  @include flex(inline-flex, flex-end, center);
+}
+
+@mixin inline-flex-end-end {
+  @include flex(inline-flex, flex-end, flex-end);
 }

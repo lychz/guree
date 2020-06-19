@@ -1,0 +1,62 @@
+@import "../../common/utils/index.scss";
+
+@function modal-class($cls) {
+  @return scopedClass();
+}
+
+.#{scopedClass(modal-mask)} {
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1998;
+}
+
+.#{scopedClass(modal)} {
+  border: 1px rgba($color: #000000, $alpha: 0.5) solid;
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 1999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 420px;
+  border-radius: 5px;
+  &-hidden {
+    display: none;
+  }
+  &-close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include flex-center-center();
+    cursor: pointer;
+  }
+  &-header {
+    min-height: 40px;
+    padding: 10px 20px 10px;
+    .#{scopedClass(modal-title)} {
+      @include flex-start-center();
+      min-height: 20px;
+      padding-right: 20px;
+    }
+  }
+  &-body {
+    padding: 20px 20px;
+  }
+  &-footer {
+    padding: 10px 20px 20px;
+    min-height: 60px;
+    @include flex-end-center();
+  }
+  &-confirm {
+    &-body {
+      font-size: 22px;
+      margin-right: 10px;
+    }
+  }
+}

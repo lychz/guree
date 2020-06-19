@@ -55,5 +55,11 @@ module.exports = {
 			],
 			sectionDepth: 1
     },
+    {
+      name: '消息通知',
+      components: [
+        'src/components/Modal/Modal.tsx',
+      ]
+    }
   ]
 };
