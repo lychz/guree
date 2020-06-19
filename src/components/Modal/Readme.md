@@ -150,8 +150,12 @@ const confirmHandler = (e) => {
 };
 
 const footer = [
-  <Button key="no" onClick={cancelHandler} type="primary">NO</Button>,
-  <Button key="yes" onClick={confirmHandler} type="danger">Yes</Button>
+  <Button key="no" onClick={cancelHandler} type="primary">
+    NO
+  </Button>,
+  <Button key="yes" onClick={confirmHandler} type="danger">
+    Yes
+  </Button>,
 ];
 
 <div>
@@ -170,6 +174,7 @@ const footer = [
 ```
 
 ### 不显示右上角关闭按钮
+
 ```jsx
 import Button from "@components/Button";
 import { useState } from "react";
@@ -226,25 +231,25 @@ const confirmHandler = (e) => {
 };
 
 const showModal = () => {
-  $modal({
+  const modal = $modal({
     title: "title",
     onCancel: cancelHandler,
     onConfirm: confirmHandler,
-    children: <div>modal content</div>,
-  })
-}
+    children: <div>modal content <Button onClick={() => {modal.close()}}>close me</Button></div>,
+  });
+};
 
 const showAlert = () => {
   $alert({
     title: "alert title",
-    content: "alert content"
+    content: "alert content",
   });
 };
 
 const showConfirm = () => {
   $confirm({
     title: "confirm title",
-    content: "confirm content"
+    content: "confirm content",
   });
 };
 
