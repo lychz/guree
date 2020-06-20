@@ -8,6 +8,10 @@ $preName: "guree";
   box-sizing: border-box;
 }
 
+.guree-span {
+  display: inline-flex;
+}
+
 @mixin flex($flex: flex, $justify-content: center, $align-items: center) {
   display: $flex;
   justify-content: $justify-content;
