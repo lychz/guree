@@ -1,6 +1,6 @@
 const path = require("path");
 const { version } = require("./package");
-const webpackConfig = require("./config/webpack.config.js")();
+const webpackConfig = require("./config/webpack.config.js")("production");
 
 module.exports = {
   components: "src/components/**/[A-Z]*.tsx",
@@ -11,10 +11,7 @@ module.exports = {
   ribbon: {
     url: "https://github.com/styleguidist/react-styleguidist",
   },
-  webpackConfig: {
-    resolve: webpackConfig.resolve,
-    module: webpackConfig.module,
-  },
+  webpackConfig,
   version,
   propsParser: require("react-docgen-typescript").withCustomConfig(
     "./tsconfig.json",
