@@ -75,8 +75,8 @@
     "test": "node scripts/test.js",
     "codecov": "codecov",
     "ci": "cross-env CI=true yarn test",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build"
+    "styleguide": "cross-env NODE_ENV=development styleguidist server",
+    "styleguide:build": "cross-env NODE_ENV=production styleguidist build"
   },
   "eslintConfig": {
     "extends": "react-app"

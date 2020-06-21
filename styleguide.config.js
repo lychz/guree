@@ -1,6 +1,6 @@
 const path = require("path");
 const { version } = require("./package");
-const webpackConfig = require("./config/webpack.config.js")("production");
+const webpackConfig = require("./config/webpack.config.js")(process.env.NODE_ENV);
 
 module.exports = {
   components: "src/components/**/[A-Z]*.tsx",
