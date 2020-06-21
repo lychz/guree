@@ -4,15 +4,25 @@ import { combineClasses, scopedClass, classesObj, updateStateOnPropChange, inlin
 import Icon from "@components/Icon";
 
 interface Props {
+  /** 后遮罩 */
   addonAfter?: ReactNode;
+  /** 前遮罩 */
   addonBefore?: ReactNode;
+  /** 占位字符 */
   placeholder?: string;
+  /** 禁用状态 */
   disabled?: boolean;
+  /** 前缀 */
   prefix?: ReactNode;
+  /** 后缀 */
   suffix?: ReactNode;
+  /** 类型，同 input 原生标签一致，除了 textarea */
   type?: string;
+  /** 输入值 */
   value?: string;
+  /** 输入值变化时的回调 */
   onChange?: ChangeEventHandler<Element>;
+  /** 显示清空按钮 */
   allowClear?: boolean;
 }
 
