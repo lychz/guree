@@ -56,7 +56,7 @@ const mediaAddLinstener = (
 const updateStateOnPropChange = <T extends unknown>(state: T, setState: React.Dispatch<React.SetStateAction<T>>) => {
   const mounting = useRef(true)
 
-  useEffect(() => {
+  useEffect(() => {    
     if (mounting.current) {
       mounting.current = false
     } else {

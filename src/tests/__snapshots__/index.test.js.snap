@@ -6,5 +6,7 @@ Array [
   "Icon",
   "Row",
   "Col",
+  "Modal",
+  "Input",
 ]
 `;
