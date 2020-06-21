@@ -1,3 +1,5 @@
+import { SetStateAction, useRef, useEffect } from "react";
+
 export interface classesObj {
   [K: string]: boolean;
 }
@@ -38,6 +40,8 @@ const combineClasses = (...classes: (string | Array<string> | classesObj)[]) =>
 const scopedClass = (...classes: (string | Array<string> | classesObj)[]) =>
   composeClasses("guree", ...classes);
 
+const inlineFlexSpan = scopedClass("span")
+
 const mediaAddLinstener = (
   cb: Function,
   mediaValue: number | undefined
@@ -49,10 +53,28 @@ const mediaAddLinstener = (
   };
 };
 
+const updateStateOnPropChange = <T extends unknown>(state: T, setState: React.Dispatch<React.SetStateAction<T>>) => {
+  const mounting = useRef(true)
+
+  useEffect(() => {
+    if (mounting.current) {
+      mounting.current = false
+    } else {
+      setState(state)
+    }
+  }, [state])
+}
+
+
 export {
   generateClassesList,
   composeClasses,
   combineClasses,
   scopedClass,
   mediaAddLinstener,
+  updateStateOnPropChange,
 };
+
+export {
+  inlineFlexSpan,
+}

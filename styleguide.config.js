@@ -57,6 +57,12 @@ module.exports = {
       components: [
         'src/components/Modal/Modal.tsx',
       ]
+    },
+    {
+      name: '表单组件',
+      components: [
+        'src/components/Input/Input.tsx',
+      ]
     }
   ]
 };
