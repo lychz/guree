@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio 组件 正确导出 Radio 组件 1`] = `
+<span
+  className="guree-radio"
+  onClick={[Function]}
+>
+  <span
+    className="guree-radio-inner"
+  />
+  <span
+    className="guree-radio-name"
+  />
+</span>
+`;
+
+exports[`Radio 组件 测试 Radio 组件 disabled 参数 1`] = `
+<span
+  className="guree-radio guree-radio-disabled"
+  onClick={[Function]}
+>
+  <span
+    className="guree-radio-inner"
+  />
+  <span
+    className="guree-radio-name"
+  />
+</span>
+`;
+
+exports[`Radio 组件 测试 Radio 组件 status 参数 1`] = `
+<span
+  className="guree-radio guree-radio-selected"
+  onClick={[Function]}
+>
+  <span
+    className="guree-radio-inner"
+  />
+  <span
+    className="guree-radio-name"
+  />
+</span>
+`;
+
+exports[`Radio 组件 测试 Radio 组件 value 参数 1`] = `
+<span
+  className="guree-radio"
+  onClick={[Function]}
+>
+  <span
+    className="guree-radio-inner"
+  />
+  <span
+    className="guree-radio-name"
+  />
+</span>
+`;
+
+exports[`RadioGroup 组件 正确导出 RadioGroup 组件 1`] = `
+<div
+  className="guree-radio-group"
+/>
+`;
+
+exports[`RadioGroup 组件 正确导出 RadioGroup 组件 value 参数 1`] = `
+<div
+  className="guree-radio-group"
+>
+  <span
+    className="guree-radio"
+    onClick={[Function]}
+  >
+    <span
+      className="guree-radio-inner"
+    />
+    <span
+      className="guree-radio-name"
+    >
+      radio1
+    </span>
+  </span>
+  <span
+    className="guree-radio guree-radio-selected"
+    onClick={[Function]}
+  >
+    <span
+      className="guree-radio-inner"
+    />
+    <span
+      className="guree-radio-name"
+    >
+      radio2
+    </span>
+  </span>
+  <span
+    className="guree-radio"
+    onClick={[Function]}
+  >
+    <span
+      className="guree-radio-inner"
+    />
+    <span
+      className="guree-radio-name"
+    >
+      radio3
+    </span>
+  </span>
+</div>
+`;
