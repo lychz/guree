@@ -6,7 +6,7 @@ import { scopedClass, classesObj } from "@utils/index";
 interface Props {
   children: ReactElement;
   value?: any;
-  onChange: (radioAttrs: radioAttrs) => {};
+  onChange?: (radioAttrs: radioAttrs) => {};
 }
 
 const RadioGroup: React.FunctionComponent<Props> = ({

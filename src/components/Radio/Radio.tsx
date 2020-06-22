@@ -8,10 +8,10 @@ import {
 } from "@utils/index";
 
 export interface radioAttrs {
-  children: ReactNode;
+  children?: ReactNode;
   value: any;
-  disabled: boolean;
-  status: boolean;
+  disabled?: boolean;
+  status?: boolean;
 }
 
 export interface Props {
