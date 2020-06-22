@@ -5,6 +5,7 @@ $radio: scopedClass(radio);
 .#{$radio} {
   line-height: 1.5em;
   @include inline-flex-start-center;
+  cursor: pointer;
   &-inner {
     @include inline-flex-center-center;
     width: 16px;
