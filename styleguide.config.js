@@ -62,7 +62,9 @@ module.exports = {
       name: '表单组件',
       components: [
         'src/components/Input/Input.tsx',
-      ]
+        'src/components/Radio/Radio.tsx',
+      ],
+      sectionDepth: 1
     }
   ]
 };
