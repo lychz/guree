@@ -8,25 +8,25 @@ import {
 } from "@utils/index";
 
 export interface radioAttrs {
-  children?: ReactNode;
-  value: any;
-  disabled?: boolean;
-  status?: boolean;
-}
-
-export interface Props {
   children: ReactNode;
   value: any;
   disabled: boolean;
   status: boolean;
-  onClick: (radioAttrs: radioAttrs) => {};
+}
+
+export interface Props {
+  children?: ReactNode;
+  value: any;
+  disabled?: boolean;
+  status?: boolean;
+  onClick?: (radioAttrs: radioAttrs) => {};
 }
 
 const Radio: React.FunctionComponent<Props> = ({
   children,
   value,
-  disabled,
-  status,
+  disabled = false,
+  status = false,
   onClick,
 }: Props) => {
   const radioClass = (...classes: (string | Array<string> | classesObj)[]) =>
