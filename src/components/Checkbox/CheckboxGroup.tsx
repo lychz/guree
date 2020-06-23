@@ -23,12 +23,13 @@ const CheckGroup: React.FunctionComponent<Props> = ({
   const changeChecked = (checkAttrs: checkAttrs) => {
     React.Children.forEach(children, (element) => {
       const { value } = element.props;
+      const emptyArr: Array<any> = []
       if (value === checkAttrs.value) {
         const values = checkedValues
           ? checkAttrs.checked
             ? checkedValues.concat([checkAttrs.value])
             : checkedValues.filter((v: any) => v !== checkAttrs.value)
-          : undefined;
+          : emptyArr.concat([checkAttrs.value]);
         setCheckedValues(values);
         onChange && onChange(values);
       }
