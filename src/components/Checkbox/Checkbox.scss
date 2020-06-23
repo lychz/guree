@@ -1,1 +1,61 @@
 @import "../../common/utils/index.scss";
+
+$checkbox: scopedClass(checkbox);
+
+.#{$checkbox} {
+  line-height: 1.5em;
+  @include inline-flex-start-center;
+  cursor: pointer;
+  &-inner {
+    @include inline-flex-center-center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    margin-right: 4px;
+  }
+  &-name {
+    line-height: 1.5em;
+  }
+  & + & {
+    margin-left: 20px;
+  }
+
+  &-checked {
+    .#{$checkbox}-inner {
+      background-color: #409eff;
+    }
+  }
+
+  &-indeterminate {
+    .#{$checkbox}-inner {
+      border: 1px solid #409eff;
+      &:after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: #409eff;
+        display: inline-block;
+      }
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    color: rgba($color: #000000, $alpha: .25);
+    &.#{$checkbox}-checked{
+      .#{$checkbox}-inner {
+        background-color: rgba($color: #000000, $alpha: .25);
+      }
+    }
+    .#{$checkbox}-inner {
+      border: 1px solid rgba($color: #000000, $alpha: .25);
+      &:after {
+        background-color: rgba($color: #000000, $alpha: .25);
+      }
+    }
+  }
+
+  &-group {
+    @include inline-flex-start-center;
+  }
+}
