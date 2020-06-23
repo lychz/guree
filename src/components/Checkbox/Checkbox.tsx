@@ -18,15 +18,15 @@ export interface checkAttrs {
 
 interface Props {
   children?: ReactNode;
-  /* Checkbox 的值，可用于与其他 Checkbox 区分 **/
-  value: any;
-  /* 选中状态 **/
+  /** Checkbox 的值，可用于与其他 Checkbox 区分 */
+  value?: any;
+  /** 选中状态 */
   checked?: boolean;
-  /* 禁用状态 **/
+  /** 禁用状态 */
   disabled?: boolean;
-  /* 设置 indeterminate 状态，只负责样式控制 **/
+  /** 设置 indeterminate 状态，只负责样式控制 */
   indeterminate?: boolean;
-  /* 点击时调用 **/
+  /** 点击时调用 */
   onClick?: (checkAttrs: checkAttrs) => {};
 }
 
