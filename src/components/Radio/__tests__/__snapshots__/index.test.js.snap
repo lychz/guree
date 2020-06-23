@@ -14,9 +14,9 @@ exports[`Radio 组件 正确导出 Radio 组件 1`] = `
 </span>
 `;
 
-exports[`Radio 组件 测试 Radio 组件 disabled 参数 1`] = `
+exports[`Radio 组件 测试 Radio 组件 checked 参数 1`] = `
 <span
-  className="guree-radio guree-radio-disabled"
+  className="guree-radio guree-radio-selected"
   onClick={[Function]}
 >
   <span
@@ -28,9 +28,9 @@ exports[`Radio 组件 测试 Radio 组件 disabled 参数 1`] = `
 </span>
 `;
 
-exports[`Radio 组件 测试 Radio 组件 status 参数 1`] = `
+exports[`Radio 组件 测试 Radio 组件 disabled 参数 1`] = `
 <span
-  className="guree-radio guree-radio-selected"
+  className="guree-radio guree-radio-disabled"
   onClick={[Function]}
 >
   <span

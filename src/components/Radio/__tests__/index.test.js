@@ -14,8 +14,8 @@ describe("Radio 组件", () => {
     expect(radio).toMatchSnapshot();
   });
 
-  it("测试 Radio 组件 status 参数", () => {
-    const radio = renderer.create(<Radio status></Radio>).toJSON();
+  it("测试 Radio 组件 checked 参数", () => {
+    const radio = renderer.create(<Radio checked></Radio>).toJSON();
     expect(radio).toMatchSnapshot();
   });
 
