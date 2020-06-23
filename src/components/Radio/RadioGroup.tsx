@@ -1,7 +1,7 @@
 import React, { useState, ReactElement } from "react";
 import { radioAttrs } from "./Radio";
 import "./Radio.scss";
-import { scopedClass, classesObj } from "@utils/index";
+import { scopedClass, classesObj, updateStateOnPropChange } from "@utils/index";
 
 interface Props {
   children: ReactElement;
@@ -21,14 +21,17 @@ const RadioGroup: React.FunctionComponent<Props> = ({
   const [checkedValue, setCheckedValue] = useState(value);
 
   const changeChecked = (radioAttrs: radioAttrs) => {
-    onChange && onChange(radioAttrs);
+    const { value: radioValue } = radioAttrs;
     React.Children.forEach(children, (element) => {
       const { value } = element.props;
-      if (value === radioAttrs.value) {
+      if (value === radioValue) {
         setCheckedValue(value);
+        onChange && onChange(radioValue);
       }
     });
   };
+
+  updateStateOnPropChange(value, setCheckedValue);
 
   const radioChildren = React.Children.map(children, (element) => {
     return React.cloneElement(
@@ -36,7 +39,7 @@ const RadioGroup: React.FunctionComponent<Props> = ({
       Object.assign(
         {},
         {
-          status: element.props.value === checkedValue,
+          checked: element.props.value === checkedValue,
           onClick: changeChecked,
         },
         element.props

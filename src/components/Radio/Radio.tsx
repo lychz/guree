@@ -11,14 +11,18 @@ export interface radioAttrs {
   children: ReactNode;
   value: any;
   disabled: boolean;
-  status: boolean;
+  checked: boolean;
 }
 
 export interface Props {
   children?: ReactNode;
-  value: any;
+  /** Radio 的值，可用于与其他 Radio 区分 */
+  value?: any;
+  /** 禁用状态 */
   disabled?: boolean;
-  status?: boolean;
+  /** 选中状态 */
+  checked?: boolean;
+  /** 点击时调用 */
   onClick?: (radioAttrs: radioAttrs) => {};
 }
 
@@ -26,20 +30,20 @@ const Radio: React.FunctionComponent<Props> = ({
   children,
   value,
   disabled = false,
-  status = false,
+  checked = false,
   onClick,
 }: Props) => {
   const radioClass = (...classes: (string | Array<string> | classesObj)[]) =>
     scopedClass("radio", ...classes);
 
-  const [selectStatus, setSelectStatus] = useState(status);
+  const [checkedStatus, setCheckedStatus] = useState(checked);
   const select = () => {
-    setSelectStatus(true);
+    setCheckedStatus(true);
   };
 
   const radioClassName = combineClasses({
     [radioClass()]: true,
-    [radioClass("selected")]: selectStatus,
+    [radioClass("selected")]: checkedStatus,
     [radioClass("disabled")]: disabled,
   });
   const clickHandler: ReactEventHandler<HTMLElement> = (e) => {
@@ -47,9 +51,9 @@ const Radio: React.FunctionComponent<Props> = ({
       return;
     }
     select();
-    onClick && onClick({ children, value, disabled, status });
+    onClick && onClick({ children, value, disabled, checked: !checkedStatus });
   };
-  updateStateOnPropChange(status, setSelectStatus);
+  updateStateOnPropChange(checked, setCheckedStatus);
   return (
     <span className={radioClassName} onClick={clickHandler}>
       <span className={radioClass("inner")}></span>
