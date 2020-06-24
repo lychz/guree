@@ -1,4 +1,5 @@
 import { SetStateAction, useRef, useEffect } from "react";
+import { isUndefined } from "util";
 
 export interface classesObj {
   [K: string]: boolean;
@@ -40,12 +41,9 @@ const combineClasses = (...classes: (string | Array<string> | classesObj)[]) =>
 const scopedClass = (...classes: (string | Array<string> | classesObj)[]) =>
   composeClasses("guree", ...classes);
 
-const inlineFlexSpan = scopedClass("span")
+const inlineFlexSpan = scopedClass("span");
 
-const mediaAddLinstener = (
-  cb: Function,
-  mediaValue: number | undefined
-) => {
+const mediaAddLinstener = (cb: Function, mediaValue: number | undefined) => {
   return (e: { matches: Boolean }) => {
     if (e.matches) {
       cb(mediaValue || 0);
@@ -53,18 +51,20 @@ const mediaAddLinstener = (
   };
 };
 
-const updateStateOnPropChange = <T extends unknown>(state: T, setState: React.Dispatch<React.SetStateAction<T>>) => {
-  const mounting = useRef(true)
+const updateStateOnPropChange = <T extends unknown>(
+  state: T,
+  setState: React.Dispatch<React.SetStateAction<T>>
+) => {
+  const mounting = useRef(true);
 
-  useEffect(() => {    
+  useEffect(() => {
     if (mounting.current) {
-      mounting.current = false
-    } else {
-      setState(state)
+      mounting.current = false;
+    } else if (!isUndefined(state)) {
+      setState(state);
     }
-  }, [state])
-}
-
+  }, [state]);
+};
 
 export {
   generateClassesList,
@@ -75,6 +75,4 @@ export {
   updateStateOnPropChange,
 };
 
-export {
-  inlineFlexSpan,
-}
+export { inlineFlexSpan };

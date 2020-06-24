@@ -1,4 +1,4 @@
-import React, { ReactNode, MouseEventHandler, useState } from "react";
+import React, { ReactNode, MouseEventHandler, useState, useRef, useEffect } from "react";
 import "./Switch.scss";
 import {
   combineClasses,
@@ -6,34 +6,35 @@ import {
   classesObj,
   updateStateOnPropChange,
 } from "@utils/index";
+import { isUndefined } from "util";
 
 interface Props {
   /** 选中状态 */
-  checked: boolean;
+  checked?: boolean;
   /** 默认选中状态 */
-  defaultChecked: boolean;
+  defaultChecked?: boolean;
   /** 选中时的内容 */
-  checkedChildren: ReactNode;
+  checkedChildren?: ReactNode;
   /** 未选中时的内容 */
-  unCheckedChildren: ReactNode;
+  unCheckedChildren?: ReactNode;
   /** 禁用状态 */
-  disabled: boolean;
+  disabled?: boolean;
   /** 状态改变时的回调 */
-  onChange: (checked: boolean) => {};
+  onChange?: (checked: boolean) => {};
 }
 
 const Switch: React.FunctionComponent<Props> = ({
   checked,
-  defaultChecked,
+  defaultChecked = false,
   checkedChildren,
   unCheckedChildren,
-  disabled,
+  disabled = false,
   onChange,
 }: Props) => {
   const switchClass = (...classes: (string | Array<string> | classesObj)[]) =>
     scopedClass("switch", ...classes);
 
-  const [checkedStatus, setCheckedStatus] = useState(typeof checked === "undefined" ? defaultChecked : checked);
+  const [checkedStatus, setCheckedStatus] = useState(isUndefined(checked) ? defaultChecked : checked);
 
   const switchClassName = combineClasses({
     [switchClass()]: true,
@@ -42,13 +43,14 @@ const Switch: React.FunctionComponent<Props> = ({
   });
 
   const change: MouseEventHandler<HTMLElement> = (e) => {
-    if (disabled || typeof checked !== "undefined") {
+    if (disabled || !isUndefined(checked)) {
       return
     }
     setCheckedStatus(!checkedStatus)
     onChange && onChange(!checkedStatus);
   };
-  updateStateOnPropChange(checked, setCheckedStatus);
+  updateStateOnPropChange(checked!, setCheckedStatus);
+
   return (
     <span className={switchClassName} onClick={change}>
       <span className={switchClass("unvisible")}>
