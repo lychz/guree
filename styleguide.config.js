@@ -64,6 +64,7 @@ module.exports = {
         'src/components/Input/Input.tsx',
         'src/components/Radio/Radio.tsx',
         'src/components/Checkbox/Checkbox.tsx',
+        'src/components/Switch/Switch.tsx',
       ],
       sectionDepth: 1
     }

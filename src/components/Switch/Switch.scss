@@ -1,0 +1,64 @@
+@import "../../common/utils/index.scss";
+
+$switch: scopedClass(switch);
+
+.#{$switch} {
+  min-width: 44px;
+  min-height: 22px;
+  position: relative;
+  padding: 2px;
+  border-radius: 11px;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  display: inline-flex;
+  cursor: pointer;
+  &-handler {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-color: #fff;
+    left: 2px;
+    border-radius: 50%;
+    top: 2px;
+    transition: all .36s cubic-bezier(.78,.14,.15,.86);
+  }
+  &-inner {
+    min-height: 18px;
+    min-width: 16px;
+    @include flex-center-center;
+    position: absolute;
+    right: 7px;
+    top: 2px;
+    transition: all .36s cubic-bezier(.78,.14,.15,.86);
+  }
+
+  &-checked {
+    background-color: #409eff;
+    .#{$switch}-handler {
+      left: calc(100% - 18px - 2px);
+    }
+    .#{$switch}-inner {
+      right: 25px;
+    }
+  }
+  &-unvisible {
+    visibility: hidden;
+    display: inline-flex;
+    .#{$switch}-handler {
+      position: unset;
+    }
+    .#{$switch}-inner {
+      position: unset;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  &-disabled {
+    cursor: not-allowed;
+    opacity: .4;
+    &.#{$switch}-checked {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+}
