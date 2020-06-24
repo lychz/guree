@@ -60,7 +60,7 @@ const updateStateOnPropChange = <T extends unknown>(
   useEffect(() => {
     if (mounting.current) {
       mounting.current = false;
-    } else if (!isUndefined(state)) {
+    } else {
       setState(state);
     }
   }, [state]);
