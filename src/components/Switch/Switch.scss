@@ -20,7 +20,7 @@ $switch: scopedClass(switch);
     left: 2px;
     border-radius: 50%;
     top: 2px;
-    transition: all .36s cubic-bezier(.78,.14,.15,.86);
+    transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86);
   }
   &-inner {
     min-height: 18px;
@@ -29,7 +29,7 @@ $switch: scopedClass(switch);
     position: absolute;
     right: 7px;
     top: 2px;
-    transition: all .36s cubic-bezier(.78,.14,.15,.86);
+    transition: all 0.36s cubic-bezier(0.78, 0.14, 0.15, 0.86);
   }
 
   &-checked {
@@ -56,7 +56,7 @@ $switch: scopedClass(switch);
 
   &-disabled {
     cursor: not-allowed;
-    opacity: .4;
+    opacity: 0.4;
     &.#{$switch}-checked {
       background-color: rgba(0, 0, 0, 0.25);
     }

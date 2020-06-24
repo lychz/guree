@@ -1,4 +1,4 @@
-import React, { ReactNode, MouseEventHandler, useState, useRef, useEffect } from "react";
+import React, { ReactNode, MouseEventHandler, useState } from "react";
 import "./Switch.scss";
 import {
   combineClasses,
@@ -25,7 +25,7 @@ interface Props {
 
 const Switch: React.FunctionComponent<Props> = ({
   checked,
-  defaultChecked = false,
+  defaultChecked,
   checkedChildren,
   unCheckedChildren,
   disabled = false,
@@ -34,22 +34,24 @@ const Switch: React.FunctionComponent<Props> = ({
   const switchClass = (...classes: (string | Array<string> | classesObj)[]) =>
     scopedClass("switch", ...classes);
 
-  const [checkedStatus, setCheckedStatus] = useState(isUndefined(checked) ? defaultChecked : checked);
+  const [checkedStatus, setCheckedStatus] = useState(
+    isUndefined(checked) ? defaultChecked : checked
+  );
 
   const switchClassName = combineClasses({
     [switchClass()]: true,
-    [switchClass("checked")]: checkedStatus,
+    [switchClass("checked")]: Boolean(checkedStatus),
     [switchClass("disabled")]: disabled,
   });
 
   const change: MouseEventHandler<HTMLElement> = (e) => {
-    if (disabled || !isUndefined(checked)) {
-      return
-    }
-    setCheckedStatus(!checkedStatus)
     onChange && onChange(!checkedStatus);
+    if (disabled || !isUndefined(checked)) {
+      return;
+    }
+    setCheckedStatus(!checkedStatus);
   };
-  updateStateOnPropChange(checked!, setCheckedStatus);
+  updateStateOnPropChange(checked, setCheckedStatus);
 
   return (
     <span className={switchClassName} onClick={change}>
@@ -57,7 +59,7 @@ const Switch: React.FunctionComponent<Props> = ({
         <span className={switchClass("handler")}></span>
         <span className={switchClass("inner")}>
           {checkedStatus ? checkedChildren : unCheckedChildren}
-        </span>  
+        </span>
       </span>
       <span className={switchClass("handler")}></span>
       <span className={switchClass("inner")}>
