@@ -4,13 +4,21 @@
 <Radio value={"radio"}>radio</Radio>
 ```
 
+### 默认选中
+
+```jsx
+<Radio defaultChecked value={"radio"}>
+  radio
+</Radio>
+```
+
 ### 受控组件
 
 ```jsx
 import Button from "@components/Button";
 import { useState } from "react";
 const [checked, setChecked] = useState(false);
-const onClick = (radioAttrs) => {
+const onChange = (radioAttrs) => {
   const { checked } = radioAttrs;
   setChecked(checked);
 };
@@ -18,7 +26,7 @@ const changeChecked = () => {
   setChecked(!checked);
 };
 <div>
-  <Radio checked={checked} onClick={onClick}>
+  <Radio checked={checked} onChange={onChange}>
     radio
   </Radio>
   <br />
@@ -41,18 +49,25 @@ const changeChecked = () => {
 
 ```jsx
 import { RadioGroup } from "@components/Radio";
-<RadioGroup
-  onChange={(radioAttrs) => {
-    console.log(radioAttrs);
-  }}
->
-  <Radio value={"radio1"}>radio1</Radio>
-  <Radio value={"radio2"}>radio2</Radio>
-  <Radio value={"radio3"}>radio3</Radio>
+<RadioGroup>
+  <Radio value={1}>radio1</Radio>
+  <Radio value={2}>radio2</Radio>
+  <Radio value={3}>radio3</Radio>
 </RadioGroup>;
 ```
 
-### 控制选中
+### 单选组的默认值
+
+```jsx
+import { RadioGroup } from "@components/Radio";
+<RadioGroup defaultValue={2}>
+  <Radio value={1}>radio1</Radio>
+  <Radio value={2}>radio2</Radio>
+  <Radio value={3}>radio3</Radio>
+</RadioGroup>;
+```
+
+### 受控的单选组组件
 
 通过 value 控制当前选中的值
 
@@ -68,7 +83,7 @@ const changeRadio = (value) => {
 };
 
 const onChange = (value) => {
-  console.log(value);
+  setValue(value);
 };
 
 <div>

@@ -2,31 +2,39 @@ import React, { useState, ReactElement } from "react";
 import { radioAttrs } from "./Radio";
 import "./Radio.scss";
 import { scopedClass, classesObj, updateStateOnPropChange } from "@utils/index";
+import { isUndefined } from "util";
 
 interface Props {
   children: ReactElement;
   value?: any;
   onChange?: (radioAttrs: radioAttrs) => {};
+  defaultValue?: any;
 }
 
 const RadioGroup: React.FunctionComponent<Props> = ({
   children,
   value,
   onChange,
+  defaultValue,
 }: Props) => {
   const radioGroupClass = (
     ...classes: (string | Array<string> | classesObj)[]
   ) => scopedClass("radio-group", ...classes);
 
-  const [checkedValue, setCheckedValue] = useState(value);
+  const [checkedValue, setCheckedValue] = useState(
+    isUndefined(value) ? defaultValue : value
+  );
 
   const changeChecked = (radioAttrs: radioAttrs) => {
-    const { value: radioValue } = radioAttrs;
+    const { value: checkedValue } = radioAttrs;
     React.Children.forEach(children, (element) => {
-      const { value } = element.props;
-      if (value === radioValue) {
-        setCheckedValue(value);
-        onChange && onChange(radioValue);
+      const { value: radioValue } = element.props;
+      if (radioValue === checkedValue) {
+        onChange && onChange(checkedValue);
+        if (!isUndefined(value)) {
+          return;
+        }
+        setCheckedValue(radioValue);
       }
     });
   };
@@ -40,7 +48,7 @@ const RadioGroup: React.FunctionComponent<Props> = ({
         {},
         {
           checked: element.props.value === checkedValue,
-          onClick: changeChecked,
+          onChange: changeChecked,
         },
         element.props
       )

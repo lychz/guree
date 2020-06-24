@@ -21,7 +21,7 @@ $radio: scopedClass(radio);
     margin-left: 20px;
   }
 
-  &-selected {
+  &-checked {
     .#{$radio}-inner {
       border: 1px solid #409eff;
       &:after {
@@ -37,11 +37,11 @@ $radio: scopedClass(radio);
 
   &-disabled {
     cursor: not-allowed;
-    color: rgba($color: #000000, $alpha: .25);
+    color: rgba($color: #000000, $alpha: 0.25);
     .#{$radio}-inner {
-      border: 1px solid rgba($color: #000000, $alpha: .25);
+      border: 1px solid rgba($color: #000000, $alpha: 0.25);
       &:after {
-        background-color: rgba($color: #000000, $alpha: .25);
+        background-color: rgba($color: #000000, $alpha: 0.25);
       }
     }
   }
@@ -50,7 +50,3 @@ $radio: scopedClass(radio);
     @include inline-flex-start-center;
   }
 }
-
-
-
-

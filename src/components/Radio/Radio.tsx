@@ -6,6 +6,7 @@ import {
   classesObj,
   updateStateOnPropChange,
 } from "@utils/index";
+import { isUndefined } from "util";
 
 export interface radioAttrs {
   children: ReactNode;
@@ -23,35 +24,45 @@ export interface Props {
   /** 选中状态 */
   checked?: boolean;
   /** 点击时调用 */
-  onClick?: (radioAttrs: radioAttrs) => {};
+  onChange?: (radioAttrs: radioAttrs) => {};
+  /** 默认选中状态 */
+  defaultChecked?: boolean;
 }
 
 const Radio: React.FunctionComponent<Props> = ({
   children,
   value,
   disabled = false,
-  checked = false,
-  onClick,
+  checked,
+  onChange,
+  defaultChecked,
 }: Props) => {
   const radioClass = (...classes: (string | Array<string> | classesObj)[]) =>
     scopedClass("radio", ...classes);
 
-  const [checkedStatus, setCheckedStatus] = useState(checked);
+  const [checkedStatus, setCheckedStatus] = useState(
+    isUndefined(checked) ? defaultChecked : checked
+  );
   const select = () => {
     setCheckedStatus(true);
   };
 
   const radioClassName = combineClasses({
     [radioClass()]: true,
-    [radioClass("selected")]: checkedStatus,
+    [radioClass("checked")]: Boolean(checkedStatus),
     [radioClass("disabled")]: disabled,
   });
   const clickHandler: ReactEventHandler<HTMLElement> = (e) => {
     if (disabled) {
       return;
     }
+    !checkedStatus &&
+      onChange &&
+      onChange({ children, value, disabled, checked: true });
+    if (!isUndefined(checked)) {
+      return;
+    }
     select();
-    onClick && onClick({ children, value, disabled, checked: !checkedStatus });
   };
   updateStateOnPropChange(checked, setCheckedStatus);
   return (
