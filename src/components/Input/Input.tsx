@@ -1,7 +1,14 @@
-import React, { ReactNode, ChangeEventHandler, ChangeEvent, useState } from "react";
+import React, { ReactNode, ChangeEventHandler, useState } from "react";
 import "./Input.scss";
-import { combineClasses, scopedClass, classesObj, updateStateOnPropChange, inlineFlexSpan } from "@utils/index";
+import {
+  combineClasses,
+  scopedClass,
+  classesObj,
+  updateStateOnPropChange,
+  inlineFlexSpan,
+} from "@utils/index";
 import Icon from "@components/Icon";
+import { isUndefined } from "util";
 
 interface Props {
   /** 后遮罩 */
@@ -21,11 +28,14 @@ interface Props {
   /** 输入值 */
   value?: string;
   /** 输入值变化时的回调 */
-  onChange?: ChangeEventHandler<Element>;
+  onChange?: (value: string) => {};
   /** 显示清空按钮 */
   allowClear?: boolean;
+  /** 点击清空按钮的回调 */
+  onClickClear?: () => {};
+  /** 默认值 */
+  defaultValue?: string;
 }
-
 
 const Input: React.FunctionComponent<Props> = ({
   addonAfter,
@@ -35,9 +45,11 @@ const Input: React.FunctionComponent<Props> = ({
   prefix,
   suffix,
   type,
-  value = "",
+  value,
   onChange,
   allowClear,
+  onClickClear,
+  defaultValue,
 }: Props) => {
   const InputClass = (...classes: (string | Array<string> | classesObj)[]) =>
     scopedClass("input", ...classes);
@@ -46,25 +58,35 @@ const Input: React.FunctionComponent<Props> = ({
     return combineClasses(InputClass(), InputClass(disabled ? "disabled" : ""));
   };
 
-  const [realValue, setValue] = useState(value)
+  const [realValue, setValue] = useState(
+    isUndefined(value) ? defaultValue : value
+  );
 
-  updateStateOnPropChange(value, setValue)
+  updateStateOnPropChange(value, setValue);
 
-  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value || '')
-    onChange && onChange(e)
-  }
+  const changeHandler: ChangeEventHandler<HTMLInputElement> = (e) => {
+    const { value: inputValue } = e.target;
+    onChange && onChange(inputValue || "");
+    if (disabled || !isUndefined(value)) {
+      return;
+    }
+    setValue(inputValue || "");
+  };
 
   const clear = () => {
-    setValue("")
-  }
+    onClickClear && onClickClear();
+    if (disabled || !isUndefined(value)) {
+      return;
+    }
+    setValue("");
+  };
 
   const PureInput = (
     <input
       className={InputClass("content")}
       type={type === "textarea" ? undefined : type}
       placeholder={placeholder}
-      value={realValue}
+      value={realValue || ""}
       onChange={changeHandler}
       disabled={disabled}
     />
@@ -99,7 +121,17 @@ const Input: React.FunctionComponent<Props> = ({
               InputClass("suf-fix")
             )}
           >
-            {allowClear && realValue ? <span className={combineClasses(inlineFlexSpan, InputClass("clear"))}><Icon name="times-circle" fill="currentColor" onClick={clear}></Icon></span>: null}
+            {allowClear && realValue ? (
+              <span
+                className={combineClasses(inlineFlexSpan, InputClass("clear"))}
+              >
+                <Icon
+                  name="times-circle"
+                  fill="currentColor"
+                  onClick={clear}
+                ></Icon>
+              </span>
+            ) : null}
             {suffix}
           </div>
         </div>

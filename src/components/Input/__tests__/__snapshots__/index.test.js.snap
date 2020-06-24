@@ -46,67 +46,15 @@ exports[`Input 组件 测试 Input 组件 addonBefore 参数 1`] = `
 </div>
 `;
 
-exports[`Input 组件 测试 Input 组件 allowClear 参数 1`] = `
+exports[`Input 组件 测试 Input 组件 defaultValue 参数 1`] = `
 <div
   className="guree-input guree-input"
 >
-  <div
-    className="guree-input-affix-wrapper"
-  >
-    <div
-      className="guree-input-affix guree-input-pre-fix"
-    />
-    <input
-      className="guree-input-content"
-      onChange={[Function]}
-      value=""
-    />
-    <div
-      className="guree-input-affix guree-input-suf-fix"
-    />
-  </div>
-</div>
-`;
-
-exports[`Input 组件 测试 Input 组件 allowClear 参数 2`] = `
-<div
-  className="guree-input guree-input"
->
-  <div
-    className="guree-input-affix-wrapper"
-  >
-    <div
-      className="guree-input-affix guree-input-pre-fix"
-    />
-    <input
-      className="guree-input-content"
-      onChange={[Function]}
-      value="value"
-    />
-    <div
-      className="guree-input-affix guree-input-suf-fix"
-    >
-      <span
-        className="guree-span guree-input-clear"
-      >
-        <svg
-          className="guree-icon"
-          onClick={[Function]}
-          style={
-            Object {
-              "fill": "currentColor",
-              "height": "1em",
-              "width": "1em",
-            }
-          }
-        >
-          <use
-            xlinkHref="#times-circle"
-          />
-        </svg>
-      </span>
-    </div>
-  </div>
+  <input
+    className="guree-input-content"
+    onChange={[Function]}
+    value="value"
+  />
 </div>
 `;
 
@@ -205,18 +153,6 @@ exports[`Input 组件 测试 Input 组件 type 参数 2`] = `
     className="guree-input-content"
     onChange={[Function]}
     value=""
-  />
-</div>
-`;
-
-exports[`Input 组件 测试 Input 组件 value 参数 1`] = `
-<div
-  className="guree-input guree-input"
->
-  <input
-    className="guree-input-content"
-    onChange={[Function]}
-    value="value"
   />
 </div>
 `;

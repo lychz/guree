@@ -1,39 +1,13 @@
 ### 基本用法
 
 ```jsx
-<Input placeholder="please input"></Input>
+<Input placeholder="please input" onChange={(e) => console.log(e)}></Input>
 ```
 
-### 实时获取输入框的值
+### 设置默认值
 
 ```jsx
-const onChangeHandler = (e) => {
-  const vlaue = e.target.value;
-  console.log(vlaue);
-};
-<Input onChange={onChangeHandler}></Input>;
-```
-
-### 设置输入框的值
-
-通过 value 字段改变 Input 组件的 value 时，不会触发 onChange
-
-```jsx
-import { useState } from "react";
-import Button from "@components/Button";
-
-const [value, setValue] = useState("set value");
-const onChangeHandler = (e) => {
-  console.log("value changed");
-};
-const changeValue = () => {
-  setValue("change value");
-};
-<div>
-  <Input value={value} onChange={onChangeHandler}></Input>
-  <br />
-  <Button onClick={changeValue}>change value</Button>
-</div>;
+<Input defaultValue="default value" onChange={(e) => console.log(e)}></Input>
 ```
 
 ### 设置前/后标签
@@ -73,4 +47,27 @@ import Icon from "@components/Icon";
 
 ```jsx
 <Input disabled></Input>
+```
+
+### 受控组件
+
+```jsx
+import { useState } from "react";
+import Button from "@components/Button";
+
+const [value, setValue] = useState("set value");
+const onChangeHandler = (v) => {
+  setValue(v);
+};
+const clear = () => {
+  setValue("");
+};
+<div>
+  <Input
+    value={value}
+    onChange={onChangeHandler}
+    allowClear
+    onClickClear={clear}
+  ></Input>
+</div>;
 ```
