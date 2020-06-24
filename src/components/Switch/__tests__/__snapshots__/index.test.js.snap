@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch 组件 正确导出 Switch 组件 1`] = `
+<span
+  className="guree-switch"
+  onClick={[Function]}
+>
+  <span
+    className="guree-switch-unvisible"
+  >
+    <span
+      className="guree-switch-handler"
+    />
+    <span
+      className="guree-switch-inner"
+    />
+  </span>
+  <span
+    className="guree-switch-handler"
+  />
+  <span
+    className="guree-switch-inner"
+  />
+</span>
+`;
+
+exports[`Switch 组件 测试 Switch 组件 checked 参数 1`] = `
+<span
+  className="guree-switch guree-switch-checked"
+  onClick={[Function]}
+>
+  <span
+    className="guree-switch-unvisible"
+  >
+    <span
+      className="guree-switch-handler"
+    />
+    <span
+      className="guree-switch-inner"
+    />
+  </span>
+  <span
+    className="guree-switch-handler"
+  />
+  <span
+    className="guree-switch-inner"
+  />
+</span>
+`;
+
+exports[`Switch 组件 测试 Switch 组件 checkedChildren 参数 1`] = `
+<span
+  className="guree-switch"
+  onClick={[Function]}
+>
+  <span
+    className="guree-switch-unvisible"
+  >
+    <span
+      className="guree-switch-handler"
+    />
+    <span
+      className="guree-switch-inner"
+    />
+  </span>
+  <span
+    className="guree-switch-handler"
+  />
+  <span
+    className="guree-switch-inner"
+  />
+</span>
+`;
+
+exports[`Switch 组件 测试 Switch 组件 defaultChecked 参数 1`] = `
+<span
+  className="guree-switch guree-switch-checked"
+  onClick={[Function]}
+>
+  <span
+    className="guree-switch-unvisible"
+  >
+    <span
+      className="guree-switch-handler"
+    />
+    <span
+      className="guree-switch-inner"
+    />
+  </span>
+  <span
+    className="guree-switch-handler"
+  />
+  <span
+    className="guree-switch-inner"
+  />
+</span>
+`;
+
+exports[`Switch 组件 测试 Switch 组件 disabled 参数 1`] = `
+<span
+  className="guree-switch guree-switch-disabled"
+  onClick={[Function]}
+>
+  <span
+    className="guree-switch-unvisible"
+  >
+    <span
+      className="guree-switch-handler"
+    />
+    <span
+      className="guree-switch-inner"
+    />
+  </span>
+  <span
+    className="guree-switch-handler"
+  />
+  <span
+    className="guree-switch-inner"
+  />
+</span>
+`;
+
+exports[`Switch 组件 测试 Switch 组件 unCheckedChildren 参数 1`] = `
+<span
+  className="guree-switch"
+  onClick={[Function]}
+>
+  <span
+    className="guree-switch-unvisible"
+  >
+    <span
+      className="guree-switch-handler"
+    />
+    <span
+      className="guree-switch-inner"
+    >
+      unchecked
+    </span>
+  </span>
+  <span
+    className="guree-switch-handler"
+  />
+  <span
+    className="guree-switch-inner"
+  >
+    unchecked
+  </span>
+</span>
+`;

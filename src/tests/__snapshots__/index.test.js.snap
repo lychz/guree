@@ -10,5 +10,6 @@ Array [
   "Input",
   "Radio",
   "Checkbox",
+  "Switch",
 ]
 `;
