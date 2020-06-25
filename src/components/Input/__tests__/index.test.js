@@ -73,49 +73,39 @@ describe("Input 组件", () => {
   });
 
   it("测试 Input 组件非受控组件下的 onChange 参数", () => {
-    var value = "";
-    // const fn = jest.fn(); 此处 jest.fn() 有 bug ，明明应该可以接收到参数，但是却提示接收不到，可以把接收到的参数 log 出来看到
-    const fn = (v) => (value = v);
+    const fn = jest.fn();
     const input = mount(<Input onChange={fn}></Input>);
 
     input.find("input").simulate("change", { target: { value: "1" } });
-    // expect(fn).toBeCalled("1");
-    expect(value).toEqual("1");
+    expect(fn).toBeCalledWith("1");
     expect(input.find("input").prop("value")).toEqual("1");
 
     input.find("input").simulate("change", { target: { value: undefined } });
-    // expect(fn).toBeCalled("");
-    expect(value).toEqual("");
+    expect(fn).toBeCalledWith("");
     input.setProps({ value: undefined });
     expect(input.find("input").prop("value")).toEqual("");
 
     input.find("input").simulate("change", { target: { value: "123" } });
-    // expect(fn).toBeCalled("123");
-    expect(value).toEqual("123");
+    expect(fn).toBeCalledWith("123");
     input.setProps({ value: undefined });
     expect(input.find("input").prop("value")).toEqual("123");
   });
 
   it("测试 Input 组件受控组件下的 onChange 参数", () => {
-    var value = "";
-    // const fn = jest.fn(); 此处 jest.fn() 有 bug ，明明应该可以接收到参数，但是却提示接收不到，可以把接收到的参数 log 出来看到
-    const fn = (v) => (value = v);
+    const fn = jest.fn();
     const input = mount(<Input onChange={fn} value=""></Input>);
 
     input.find("input").simulate("change", { target: { value: "1" } });
-    // expect(fn).toBeCalled("1");
-    expect(value).toEqual("1");
+    expect(fn).toBeCalledWith("1");
     expect(input.find("input").prop("value")).toEqual("");
 
     input.find("input").simulate("change", { target: { value: undefined } });
-    // expect(fn).toBeCalled("");
-    expect(value).toEqual("");
+    expect(fn).toBeCalledWith("");
     input.setProps({ value: undefined });
     expect(input.find("input").prop("value")).toEqual("");
 
     input.find("input").simulate("change", { target: { value: "123" } });
-    // expect(fn).toBeCalled("123");
-    expect(value).toEqual("123");
+    expect(fn).toBeCalledWith("123");
     input.setProps({ value: undefined });
     expect(input.find("input").prop("value")).toEqual("123");
   });
