@@ -43,6 +43,49 @@ exports[`Checkbox 组件 测试 Checkbox 组件 checked 参数 1`] = `
 </span>
 `;
 
+exports[`Checkbox 组件 测试 Checkbox 组件 checked 和 defaultValue 并存 1`] = `
+<span
+  className="guree-checkbox guree-checkbox-checked"
+  onClick={[Function]}
+>
+  <span
+    className="guree-checkbox-inner"
+  >
+    <svg
+      className="guree-icon"
+      style={
+        Object {
+          "fill": "#fff",
+          "height": "10px",
+          "width": "10px",
+        }
+      }
+    >
+      <use
+        xlinkHref="#check"
+      />
+    </svg>
+  </span>
+  <span
+    className="guree-checkbox-name"
+  />
+</span>
+`;
+
+exports[`Checkbox 组件 测试 Checkbox 组件 defaultValue 参数 1`] = `
+<span
+  className="guree-checkbox"
+  onClick={[Function]}
+>
+  <span
+    className="guree-checkbox-inner"
+  />
+  <span
+    className="guree-checkbox-name"
+  />
+</span>
+`;
+
 exports[`Checkbox 组件 测试 Checkbox 组件 disabled 参数 1`] = `
 <span
   className="guree-checkbox guree-checkbox-disabled"
@@ -71,6 +114,35 @@ exports[`Checkbox 组件 测试 Checkbox 组件 indeterminate 参数 1`] = `
 </span>
 `;
 
+exports[`Checkbox 组件 测试 Checkbox 组件 indeterminate 和 checked 并存 1`] = `
+<span
+  className="guree-checkbox guree-checkbox-checked"
+  onClick={[Function]}
+>
+  <span
+    className="guree-checkbox-inner"
+  >
+    <svg
+      className="guree-icon"
+      style={
+        Object {
+          "fill": "#fff",
+          "height": "10px",
+          "width": "10px",
+        }
+      }
+    >
+      <use
+        xlinkHref="#check"
+      />
+    </svg>
+  </span>
+  <span
+    className="guree-checkbox-name"
+  />
+</span>
+`;
+
 exports[`Checkbox 组件 测试 Checkbox 组件 value 参数 1`] = `
 <span
   className="guree-checkbox"
@@ -89,6 +161,67 @@ exports[`CheckboxGroup 组件 正确导出 CheckboxGroup 组件 1`] = `
 <div
   className="guree-radio-group"
 />
+`;
+
+exports[`CheckboxGroup 组件 正确导出 CheckboxGroup 组件 defaultValue 参数 1`] = `
+<div
+  className="guree-radio-group"
+>
+  <span
+    className="guree-checkbox guree-checkbox-checked"
+    onClick={[Function]}
+  >
+    <span
+      className="guree-checkbox-inner"
+    >
+      <svg
+        className="guree-icon"
+        style={
+          Object {
+            "fill": "#fff",
+            "height": "10px",
+            "width": "10px",
+          }
+        }
+      >
+        <use
+          xlinkHref="#check"
+        />
+      </svg>
+    </span>
+    <span
+      className="guree-checkbox-name"
+    >
+      1
+    </span>
+  </span>
+  <span
+    className="guree-checkbox"
+    onClick={[Function]}
+  >
+    <span
+      className="guree-checkbox-inner"
+    />
+    <span
+      className="guree-checkbox-name"
+    >
+      2
+    </span>
+  </span>
+  <span
+    className="guree-checkbox"
+    onClick={[Function]}
+  >
+    <span
+      className="guree-checkbox-inner"
+    />
+    <span
+      className="guree-checkbox-name"
+    >
+      3
+    </span>
+  </span>
+</div>
 `;
 
 exports[`CheckboxGroup 组件 正确导出 CheckboxGroup 组件 value 参数 1`] = `

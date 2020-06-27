@@ -1,34 +1,35 @@
 ### 基本用法
 
 ```jsx
-const onClick = (checkboxAttrs) => {
+const onChange = (checkboxAttrs) => {
   console.log(checkboxAttrs);
 };
-<Checkbox value={"checkbox"} onClick={onClick}>
+<Checkbox value={"checkbox"} onChange={onChange}>
   checkbox
 </Checkbox>;
+```
+
+### 默认选中
+
+```jsx
+<Checkbox defaultChecked value={"radio"}>
+  radio
+</Checkbox>
 ```
 
 ### 受控组件
 
 ```jsx
-import Button from "@components/Button";
 import { useState } from "react";
 const [checked, setChecked] = useState(false);
-const onClick = (checkboxAttrs) => {
+const onChange = (checkboxAttrs) => {
   const { checked } = checkboxAttrs;
   setChecked(checked);
 };
-const changeChecked = () => {
-  setChecked(!checked);
-};
 <div>
-  <Checkbox checked={checked} onClick={onClick} value={"checkbox"}>
+  <Checkbox checked={checked} onChange={onChange} value={"checkbox"}>
     checkbox
   </Checkbox>
-  <br />
-  <br />
-  <Button onClick={changeChecked}>change checked</Button>
 </div>;
 ```
 
@@ -44,14 +45,38 @@ const changeChecked = () => {
 
 ```jsx
 import { CheckboxGroup } from "@components/Checkbox";
-const onChange = (valueList) => {
-  console.log(valueList);
-};
-<CheckboxGroup onChange={onChange}>
+<CheckboxGroup>
   <Checkbox value={1}>checkbox1</Checkbox>
   <Checkbox value={2}>checkbox2</Checkbox>
   <Checkbox value={3}>checkbox3</Checkbox>
 </CheckboxGroup>;
+```
+
+### Checkbox 组的默认值
+
+```jsx
+import { CheckboxGroup } from "@components/Checkbox";
+<CheckboxGroup defaultValue={[1, 2]}>
+  <Checkbox value={1}>checkbox1</Checkbox>
+  <Checkbox value={2}>checkbox2</Checkbox>
+  <Checkbox value={3}>checkbox3</Checkbox>
+</CheckboxGroup>;
+```
+
+### 受控的 Checkbox 组组件
+
+```jsx
+import { CheckboxGroup } from "@components/Checkbox";
+import { useState } from "react";
+const [checkedList, setCheckedList] = useState([]);
+const onChange = (list) => {
+  setCheckedList(list)
+};
+  <CheckboxGroup onChange={onChange} value={checkedList}>
+    <Checkbox value={1}>checkbox1</Checkbox>
+    <Checkbox value={2}>checkbox2</Checkbox>
+    <Checkbox value={3}>checkbox3</Checkbox>
+  </CheckboxGroup>
 ```
 
 ### 全选，需要用到 indeterminate 属性
@@ -73,6 +98,7 @@ const checkAll = (e) => {
   }
 };
 const onChange = (list) => {
+  setCheckedList(list)
   setIndeterminate(list.length !== 0);
   setCheckedAll(list.length === valueList.length);
 };
@@ -80,7 +106,7 @@ const onChange = (list) => {
   <div>
     <Checkbox
       value={"checkAll"}
-      onClick={checkAll}
+      onChange={checkAll}
       indeterminate={indeterminate}
       checked={checkedAll}
     >

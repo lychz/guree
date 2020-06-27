@@ -1,4 +1,10 @@
-import React, { ReactNode, useState, MouseEventHandler, useEffect, useRef } from "react";
+import React, {
+  ReactNode,
+  useState,
+  MouseEventHandler,
+  useEffect,
+  useRef,
+} from "react";
 import "./Checkbox.scss";
 import {
   combineClasses,
@@ -7,13 +13,14 @@ import {
   updateStateOnPropChange,
 } from "@utils/index";
 import Icon from "@components/Icon";
+import { isUndefined } from "util";
 
 export interface checkAttrs {
   children: ReactNode;
   value: any;
   disabled: boolean;
   checked: boolean;
-  indeterminate: boolean;
+  indeterminate?: boolean;
 }
 
 interface Props {
@@ -27,50 +34,58 @@ interface Props {
   /** 设置 indeterminate 状态，只负责样式控制 */
   indeterminate?: boolean;
   /** 点击时调用 */
-  onClick?: (checkAttrs: checkAttrs) => {};
+  onChange?: (checkAttrs: checkAttrs) => {};
+  /** 默认选中状态*/
+  defaultChecked?: boolean;
 }
 
 const Checkbox: React.FunctionComponent<Props> = ({
   children,
   value,
-  checked = false,
+  checked,
   disabled = false,
-  indeterminate = false,
-  onClick,
+  indeterminate,
+  defaultChecked,
+  onChange,
 }: Props) => {
   const checkboxClass = (...classes: (string | Array<string> | classesObj)[]) =>
     scopedClass("checkbox", ...classes);
 
-  const [checkedStatus, setCheckedStatus] = useState(checked);
+  const [checkedStatus, setCheckedStatus] = useState(
+    isUndefined(checked) ? defaultChecked : checked
+  );
   const check = () => {
     setCheckedStatus(!checkedStatus);
   };
 
   const checkboxClassName = combineClasses({
     [checkboxClass()]: true,
-    [checkboxClass("checked")]: checkedStatus,
+    [checkboxClass("checked")]: Boolean(checkedStatus),
     [checkboxClass("disabled")]: disabled,
-    [checkboxClass("indeterminate")]: !checkedStatus && indeterminate,
+    [checkboxClass("indeterminate")]:
+      !Boolean(checkedStatus) && Boolean(indeterminate),
   });
 
   const clickHandler: MouseEventHandler<HTMLElement> = (e) => {
     if (disabled) {
       return;
     }
-    check();
-    onClick &&
-      onClick({
+    onChange &&
+      onChange({
         children,
         value,
         disabled,
         checked: !checkedStatus,
         indeterminate,
       });
+
+    if (!isUndefined(checked)) {
+      return;
+    }
+    check();
   };
 
   updateStateOnPropChange(checked, setCheckedStatus);
-
-
 
   return (
     <span className={checkboxClassName} onClick={clickHandler}>
