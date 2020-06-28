@@ -52,6 +52,7 @@ const CheckGroup: React.FunctionComponent<Props> = ({
           element,
           Object.assign(
             {},
+            element.props,
             checkedValues
               ? {
                   checked: checkedValues.includes(element.props.value),
@@ -59,8 +60,7 @@ const CheckGroup: React.FunctionComponent<Props> = ({
                 }
               : {
                   onChange: changeChecked,
-                },
-            element.props
+                }
           )
         );
       })}

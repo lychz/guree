@@ -46,11 +46,11 @@ const RadioGroup: React.FunctionComponent<Props> = ({
       element,
       Object.assign(
         {},
+        element.props,
         {
           checked: element.props.value === checkedValue,
           onChange: changeChecked,
-        },
-        element.props
+        }
       )
     );
   });
