@@ -3,6 +3,7 @@
 exports[`Button 组件 正确导出 Button 组件 1`] = `
 <button
   className="guree-button guree-button-middle guree-button-default"
+  type="button"
 >
    
   <span>
@@ -15,6 +16,7 @@ exports[`Button 组件 测试 Button 组件 disabled 参数 1`] = `
 <button
   className="guree-button guree-button-middle guree-button-default"
   disabled={true}
+  type="button"
 >
    
   <span>
@@ -26,6 +28,7 @@ exports[`Button 组件 测试 Button 组件 disabled 参数 1`] = `
 exports[`Button 组件 测试 Button 组件 icon 参数 1`] = `
 <button
   className="guree-button guree-button-middle guree-button-default"
+  type="button"
 >
   <span
     className="guree-button-action"
@@ -55,6 +58,7 @@ exports[`Button 组件 测试 Button 组件 icon 参数 1`] = `
 exports[`Button 组件 测试 Button 组件 loading 参数 1`] = `
 <button
   className="guree-button guree-button-middle guree-button-default"
+  type="button"
 >
   <span
     className="guree-button-action"
@@ -84,6 +88,7 @@ exports[`Button 组件 测试 Button 组件 loading 参数 1`] = `
 exports[`Button 组件 测试 Button 组件 size 参数 1`] = `
 <button
   className="guree-button guree-button-large guree-button-default"
+  type="button"
 >
    
   <span>
@@ -95,6 +100,7 @@ exports[`Button 组件 测试 Button 组件 size 参数 1`] = `
 exports[`Button 组件 测试 Button 组件 size 参数 2`] = `
 <button
   className="guree-button guree-button-middle guree-button-default"
+  type="button"
 >
    
   <span>
@@ -106,6 +112,7 @@ exports[`Button 组件 测试 Button 组件 size 参数 2`] = `
 exports[`Button 组件 测试 Button 组件 size 参数 3`] = `
 <button
   className="guree-button guree-button-small guree-button-default"
+  type="button"
 >
    
   <span>
@@ -117,6 +124,7 @@ exports[`Button 组件 测试 Button 组件 size 参数 3`] = `
 exports[`Button 组件 测试 Button 组件 type 参数 1`] = `
 <button
   className="guree-button guree-button-middle guree-button-default"
+  type="button"
 >
    
   <span>
@@ -128,6 +136,7 @@ exports[`Button 组件 测试 Button 组件 type 参数 1`] = `
 exports[`Button 组件 测试 Button 组件 type 参数 2`] = `
 <button
   className="guree-button guree-button-middle guree-button-primary"
+  type="button"
 >
    
   <span>
@@ -139,6 +148,7 @@ exports[`Button 组件 测试 Button 组件 type 参数 2`] = `
 exports[`Button 组件 测试 Button 组件 type 参数 3`] = `
 <button
   className="guree-button guree-button-middle guree-button-danger"
+  type="button"
 >
    
   <span>
@@ -150,6 +160,7 @@ exports[`Button 组件 测试 Button 组件 type 参数 3`] = `
 exports[`Button 组件 测试 Button 组件 type 参数 4`] = `
 <button
   className="guree-button guree-button-middle guree-button-warning"
+  type="button"
 >
    
   <span>
@@ -161,6 +172,7 @@ exports[`Button 组件 测试 Button 组件 type 参数 4`] = `
 exports[`Button 组件 测试 Button 组件 type 参数 5`] = `
 <button
   className="guree-button guree-button-middle guree-button-text"
+  type="button"
 >
    
   <span>

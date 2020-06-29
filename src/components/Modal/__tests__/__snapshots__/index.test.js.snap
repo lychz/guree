@@ -44,6 +44,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -53,6 +54,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -108,6 +110,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -117,6 +120,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -153,6 +157,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -162,6 +167,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -217,6 +223,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -226,6 +233,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -280,6 +288,7 @@ Array [
     >
       <button
         className="guree-button guree-button-middle guree-button-primary"
+        type="button"
       >
          
         <span>
@@ -288,6 +297,7 @@ Array [
       </button>
       <button
         className="guree-button guree-button-middle guree-button-danger"
+        type="button"
       >
          
         <span>
@@ -338,6 +348,7 @@ exports[`Modal 组件 测试 Modal 组件 mask 参数 1`] = `
     <button
       className="guree-button guree-button-middle guree-button-default"
       onClick={[Function]}
+      type="button"
     >
        
       <span>
@@ -347,6 +358,7 @@ exports[`Modal 组件 测试 Modal 组件 mask 参数 1`] = `
     <button
       className="guree-button guree-button-middle guree-button-primary"
       onClick={[Function]}
+      type="button"
     >
        
       <span>
@@ -403,6 +415,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -412,6 +425,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -467,6 +481,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -476,6 +491,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -535,6 +551,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -594,6 +611,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -603,6 +621,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -662,6 +681,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-default"
         onClick={[Function]}
+        type="button"
       >
          
         <span>
@@ -671,6 +691,7 @@ Array [
       <button
         className="guree-button guree-button-middle guree-button-primary"
         onClick={[Function]}
+        type="button"
       >
          
         <span>

@@ -18,6 +18,8 @@ interface Props {
   type?: "default" | "primary" | "warning" | "danger" | "text";
   /** 点击按钮触发 */
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  /** 按钮的原生类型 */
+  htmlType?: "button" | "submit" | "reset"
 }
 
 const Button: React.FunctionComponent<Props> = ({
@@ -28,6 +30,7 @@ const Button: React.FunctionComponent<Props> = ({
   disabled,
   type = "default",
   onClick,
+  htmlType = "button",
 }: Props) => {
   const buttonClass = (...classes: (string | Array<string> | classesObj)[]) => {
     return scopedClass("button", ...classes);
@@ -52,6 +55,7 @@ const Button: React.FunctionComponent<Props> = ({
       className={`${className(size)}`}
       disabled={disabled}
       onClick={onClick}
+      type={htmlType}
     >
       {IconNode} {childrenNode}
     </button>
