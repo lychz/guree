@@ -1,0 +1,13 @@
+@import "../../common/utils/index.scss";
+
+.#{scopedClass(form)} {
+  &-item-label {
+    display: flex;
+    &-left {
+      justify-content: flex-start;
+    }
+    &-right {
+      justify-content: flex-end;
+    }
+  }
+}

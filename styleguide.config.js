@@ -61,6 +61,7 @@ module.exports = {
     {
       name: '表单组件',
       components: [
+        'src/components/Form/Form.tsx',
         'src/components/Input/Input.tsx',
         'src/components/Radio/Radio.tsx',
         'src/components/Checkbox/Checkbox.tsx',
