@@ -14,7 +14,7 @@ interface ColSize extends Object {
   span?: StringOrNumber;
 }
 
-interface Props {
+export interface Props {
   children?: React.ReactNode;
   /** flex 布局属性 */
   flex?: StringOrNumber;
