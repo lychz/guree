@@ -12,11 +12,11 @@
       justify-content: flex-end;
     }
     &-input {
-      &-error{
+      &-error {
         border: 1px solid #f56c6c;
       }
     }
-    &-error{
+    &-error {
       color: #f56c6c;
     }
   }
@@ -31,21 +31,20 @@
     &-right {
       justify-content: flex-end;
     }
-    &-required:before{
+    &-required:before {
       content: "*";
       color: #f56c6c;
       margin-right: 4px;
     }
   }
   &-input {
-    &-error{
-      .guree-input{
+    &-error {
+      .guree-input {
         border: 1px solid #f56c6c;
       }
-      
     }
   }
-  &-error{
+  &-error {
     line-height: 24px;
     min-height: 24px;
     color: #f56c6c;

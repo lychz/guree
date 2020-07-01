@@ -1,9 +1,8 @@
 import { createContext, Context } from "react";
-import { UseFormFields } from "./fields";
-
+import { UseForm, FormState } from "./field";
 export interface formContextState {
   formContext: {
-    fields?: UseFormFields;
+    fields?: UseForm;
   };
 }
 
