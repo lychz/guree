@@ -1,4 +1,4 @@
-import React, { FormEventHandler, ReactElement, useEffect } from "react";
+import React, { FormEventHandler, ReactElement, useEffect, useRef } from "react";
 import "./Form.scss";
 import { scopedClass } from "@utils/index";
 import FormContext from "./context";
@@ -10,7 +10,7 @@ interface Props {
   /** 提交时调用 */
   onFinish?: (formValues: FormState) => {};
   /** 表单值发生变化时调用 */
-  onChange: (changeedValue: FormState) => {};
+  onChange?: (changeedValue: FormState) => {};
 }
 
 const Form: React.FunctionComponent<Props> = ({
@@ -45,8 +45,14 @@ const Form: React.FunctionComponent<Props> = ({
     validateResult && onFinish && onFinish(formValues);
   };
 
+  const ref = useRef(true)
   useEffect(() => {
-    onChange(formValues);
+    if (ref.current){
+      ref.current = false
+      return
+    }
+    
+    onChange && onChange(formValues);
   }, [formValues]);
   return (
     <FormContext.Provider
