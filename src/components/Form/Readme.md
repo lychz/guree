@@ -29,7 +29,8 @@ const submit = (value) => {
   >
     <Input></Input>
   </FormItem>
-    <FormItem
+  
+  <FormItem
     label="password"
     name="password"
     rules={[
@@ -39,7 +40,7 @@ const submit = (value) => {
           // console.log(_);
           return new Promise((resolve, reject) => {
             setTimeout(() => {
-              reject(`${value}`);
+              value === "123456" ? resolve() : reject(`fail`);
             }, 3000);
           });
         },

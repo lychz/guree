@@ -1,15 +1,11 @@
 import React, {
-  ReactNode,
-  useState,
   FormEventHandler,
-  useRef,
   ReactElement,
-  useEffect,
 } from "react";
 import "./Form.scss";
 import { scopedClass } from "@utils/index";
 import FormContext from "./context";
-import { validate, verify } from "./validator";
+import { verify } from "./validator";
 import { useFormFields, FormState, SetErrorsMsgs } from "./fields";
 
 interface Props {
@@ -17,75 +13,37 @@ interface Props {
   onFinish: (formValues: FormState) => {};
 }
 
-const getInitProps = (children: ReactElement) => {
-  const childrensProps = React.Children.map(children, (item) => {
-    const { name, value, rules } = item.props;
-    return {
-      name,
-      value,
-      rules,
-    };
-  });
-
-  const initForm = childrensProps.reduce((previous, current) => {
-    if (!current.name) {
-      return previous;
-    }
-    return Object.assign(
-      {},
-      {
-        [current.name]: current.value,
-      },
-      previous
-    );
-  }, {});
-
-  const initFormErrors = childrensProps.reduce((previous, current) => {
-    if (!current.name) {
-      return previous;
-    }
-    return Object.assign(
-      {},
-      {
-        [current.name]: [],
-      },
-      previous
-    );
-  }, {});
-
-  return {
-    initForm, initFormErrors
-  }
-};
-
 const Form: React.FunctionComponent<Props> = ({
   children,
   onFinish,
 }: Props) => {
   const fields = useFormFields();
-  
-  fields.init(children);
-  const {getForm, getAllForm, setErrorsMsgs, getChildrenProps} = fields
-  const formValues = getAllForm()
 
-  const totalValidate = (
-    setErrorsMsgs: SetErrorsMsgs
-  ) => {
-    getChildrenProps().forEach(async (item) => {
-      const {name, rules} = item
-      const res = await verify(rules, getForm(name))
-      setErrorsMsgs((preErrorMsgs) => {
-        return Object.assign({}, preErrorMsgs, {
-          [name]: res || [],
-        })
-      });
-    });
+  fields.init(children);
+  const { getForm, getAllForm, setErrorsMsgs, getChildrenProps } = fields;
+  const formValues = getAllForm();
+
+  const totalValidate = (setErrorsMsgs: SetErrorsMsgs) => {
+    return Promise.all(
+      getChildrenProps().map(async (item) => {
+        const { name, rules } = item;
+        const res = await verify(rules, getForm(name));
+        const { status, errorMsgs } = res;
+        setErrorsMsgs((preErrorMsgs) => {
+          return Object.assign({}, preErrorMsgs, {
+            [name]: errorMsgs,
+          });
+        });
+        return status;
+      })
+    );
   };
 
-  const submitHandler: FormEventHandler<HTMLFormElement> = (e) => {
+  const submitHandler: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    totalValidate(setErrorsMsgs);
-    onFinish(formValues);
+    const res = await totalValidate(setErrorsMsgs);
+    const validateResult = res.reduce((total, cur) => total && cur, true);
+    validateResult && onFinish(formValues);
   };
   return (
     <FormContext.Provider
@@ -93,7 +51,7 @@ const Form: React.FunctionComponent<Props> = ({
         formContext: { fields: fields },
       }}
     >
-      <form onSubmit={submitHandler}>{children}</form>
+      <form onSubmit={submitHandler} className={scopedClass("form")}>{children}</form>
     </FormContext.Provider>
   );
 };

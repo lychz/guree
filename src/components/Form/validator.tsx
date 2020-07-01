@@ -83,11 +83,20 @@ const validate = (rules: Rules, value: unknown) => {
 
 const verify = async (rules: Rules, value: unknown) => {
   if (!rules) {
-    return;
+    return {
+      status: true,
+      errorMsgs: []
+    };
   }
   const result = await Promise.all(validate(rules, value))
+  const status = result.reduce((total: boolean, cur: ValidateResult) => {
+    return total && cur.status
+  }, true)
   const errorMsgs = result.filter((x: ValidateResult) => !x.status).map(x => x.msg)
-  return errorMsgs
+  return {
+    status,
+    errorMsgs,
+  }
 };
 
 export { validate, verify };
