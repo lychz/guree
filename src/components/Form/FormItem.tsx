@@ -5,7 +5,7 @@ import Col from "@components/Col";
 import { Props as ColProps } from "@components/Col/Col";
 import Row from "@components/Row";
 import FormContext from "./context";
-import { Rules, validate, ValidateResult, verify } from './validator'
+import { Rules, validate, ValidateResult, verify } from "./validator";
 
 interface Props {
   children: ReactElement;
@@ -34,36 +34,26 @@ const Form: React.FunctionComponent<Props> = ({
     [formItemClass(`label-${labelAlign}`)]: Boolean(labelAlign),
   });
 
-
-
-  const array: Array<string> = []
-
-  const [errorMsgs, setErrorMsgs] = useState(array);
-
   return (
     <FormContext.Consumer>
-      {({ form, setForm, errorForm }) => {
-        const value = form[name];
-        const msg = errorForm[name]
-        console.log(msg)
-        const onChange = (value: unknown) => {
+      {({ formContext: { fields = {} } }) => {
+        const { getForm, setForm, getErrorMsgs, setErrorsMsgs } = fields;
+        const value = getForm && getForm(name);
+        const errorMsgs = getErrorMsgs && getErrorMsgs(name);
+        const onChange = async (value: unknown) => {
           setForm &&
-            setForm(
-              Object.assign(
-                {},
-                {
-                  [name]: value,
-                }
-              )
-            );
-            // setErrorMsgs(msg)
-            // verify(rules, value).then(res => {
-            //   if (!res) {
-            //     return
-            //   }
-            //   setErrorMsgs(res)
-            // })
-            // verify(value);
+            setForm((preFormState) => {
+              return Object.assign({}, preFormState, {
+                [name]: value,
+              })
+            });
+          const res = await verify(rules, value);
+          setErrorsMsgs &&
+            setErrorsMsgs((preErrorMsgs) => {
+              return Object.assign({}, preErrorMsgs, {
+                [name]: res || []
+              })
+            });
         };
 
         return (
@@ -83,8 +73,8 @@ const Form: React.FunctionComponent<Props> = ({
                   )}
                 </div>
                 <div className={formItemClass("error")}>
-                  {msg && msg
-                    .map((x: string, i: number) => (
+                  {errorMsgs &&
+                    errorMsgs.map((x: string, i: number) => (
                       <div key={`${i}`}>{x}</div>
                     ))}
                 </div>

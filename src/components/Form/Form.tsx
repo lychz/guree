@@ -10,108 +10,89 @@ import "./Form.scss";
 import { scopedClass } from "@utils/index";
 import FormContext from "./context";
 import { validate, verify } from "./validator";
-
-interface Form {
-  [k: string]: unknown;
-}
-
-interface FormHook {
-  form?: Form;
-  setForm?: React.Dispatch<React.SetStateAction<Form>>;
-}
+import { useFormFields, FormState, SetErrorsMsgs } from "./fields";
 
 interface Props {
   children: ReactElement;
-  form: FormHook;
-  onFinish: (form: Form | undefined) => {};
+  onFinish: (formValues: FormState) => {};
 }
 
-const Form: React.FunctionComponent<Props> = ({
-  children,
-  form,
-  onFinish,
-}: Props) => {
-  const { form: $form = {}, setForm } = form;
-
-  const errorForm = React.Children.map(children, (item) => {
+const getInitProps = (children: ReactElement) => {
+  const childrensProps = React.Children.map(children, (item) => {
+    const { name, value, rules } = item.props;
     return {
-      name: item.props.name,
-      value: $form[item.props.name],
-      validator: verify(item.props.rules, $form[item.props.name]),
+      name,
+      value,
+      rules,
     };
-  }).filter((item) => {
-    return item.name;
   });
 
-  const errorForm2: { [k: string]: any } = React.Children.map(
-    children,
-    (item) => {
-      return {
-        name: item.props.name,
-        value: $form[item.props.name],
-        validator: verify(item.props.rules, $form[item.props.name]),
-      };
-    }
-  ).reduce((previous, current) => {
+  const initForm = childrensProps.reduce((previous, current) => {
     if (!current.name) {
       return previous;
     }
     return Object.assign(
       {},
       {
-        [current.name]: "",
+        [current.name]: current.value,
       },
       previous
     );
   }, {});
 
-  const [$errorForm, setErrorForm] = useState(errorForm2);
-
-  const ref = useRef(true);
-
-  useEffect(() => {
-    if (ref.current) {
-      ref.current = false;
-      return;
+  const initFormErrors = childrensProps.reduce((previous, current) => {
+    if (!current.name) {
+      return previous;
     }
-    totalValidate(errorForm, setErrorForm);
-  }, [$form]);
+    return Object.assign(
+      {},
+      {
+        [current.name]: [],
+      },
+      previous
+    );
+  }, {});
 
-  const totalValidate = function (
-    errorForm: {
-      name: any;
-      value: unknown;
-      validator: Promise<string[] | undefined>;
-    }[],
-    setErrorForm: React.Dispatch<
-      React.SetStateAction<{
-        [k: string]: any;
-      }>
-    >
-  ) {
-    errorForm.forEach((item) => {
-      // console.log(errorForm)
-      item.validator.then((res: Array<string> | undefined) => {
-        // console.log({
-        //   [item.name]: res,
-        // });
-        console.log(11111111111111111);
-        setErrorForm({
-          [item.name]: res,
-        });
+  return {
+    initForm, initFormErrors
+  }
+};
+
+const Form: React.FunctionComponent<Props> = ({
+  children,
+  onFinish,
+}: Props) => {
+  const fields = useFormFields();
+  
+  fields.init(children);
+  const {getForm, getAllForm, setErrorsMsgs, getChildrenProps} = fields
+  const formValues = getAllForm()
+
+  const totalValidate = (
+    setErrorsMsgs: SetErrorsMsgs
+  ) => {
+    getChildrenProps().forEach(async (item) => {
+      const {name, rules} = item
+      const res = await verify(rules, getForm(name))
+      setErrorsMsgs((preErrorMsgs) => {
+        return Object.assign({}, preErrorMsgs, {
+          [name]: res || [],
+        })
       });
     });
   };
 
   const submitHandler: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    // console.log($form)
-    // totalValidate($form)
-    totalValidate(errorForm, setErrorForm);
-    onFinish($form);
+    totalValidate(setErrorsMsgs);
+    onFinish(formValues);
   };
   return (
-    <FormContext.Provider value={{ ...form, errorForm: $errorForm }}>
+    <FormContext.Provider
+      value={{
+        formContext: { fields: fields },
+      }}
+    >
       <form onSubmit={submitHandler}>{children}</form>
     </FormContext.Provider>
   );

@@ -5,21 +5,36 @@ import Button from "@components/Button";
 import { useState } from "react";
 
 const submit = (value) => {
-  console.log(value);
+  // console.log(value);
 };
 
-const [form, setForm] = useState({
-  username: 123,
-});
-
-<Form onFinish={submit} form={{ form, setForm }}>
+<Form onFinish={submit}>
   <FormItem
     label="username"
     name="username"
     rules={[
-      { required: true, message: "is required" },
+      { required: true, message: "username is required" },
       {
-        message: "validate",
+        validator: (_, value) => {
+          // console.log(_);
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              // console.log(1111)
+              reject(`${value}`);
+            }, 3000);
+          });
+        },
+      },
+    ]}
+  >
+    <Input></Input>
+  </FormItem>
+    <FormItem
+    label="password"
+    name="password"
+    rules={[
+      { required: true },
+      {
         validator: (_, value) => {
           // console.log(_);
           return new Promise((resolve, reject) => {

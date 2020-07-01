@@ -1,11 +1,14 @@
 import { createContext, Context } from "react";
+import { UseFormFields } from "./fields";
 
 export interface formContextState {
-  form?: any;
-  setForm?: React.Dispatch<React.SetStateAction<any>>;
-  errorForm?: any;
+  formContext: {
+    fields?: UseFormFields;
+  };
 }
 
-const FormContext: Context<formContextState> = createContext({});
+const FormContext: Context<formContextState> = createContext({
+  formContext: {},
+});
 
 export default FormContext;
