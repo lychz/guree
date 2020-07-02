@@ -71,7 +71,11 @@ const validate = (rules: Rules, value: unknown) => {
                 await validator(rule, value);
                 resolve(getValidateResult(true, ""));
               } catch (error) {
-                resolve(getValidateResult(false, error || ""));
+                const isErrorMsg = typeof error === "string"
+                if (!isErrorMsg) {
+                  console.error(error)
+                }
+                resolve(getValidateResult(false, isErrorMsg ? error : ""));
               }
             }),
           ]
