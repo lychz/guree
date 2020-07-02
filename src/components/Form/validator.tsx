@@ -72,9 +72,6 @@ const validate = (rules: Rules, value: unknown) => {
                 resolve(getValidateResult(true, ""));
               } catch (error) {
                 const isErrorMsg = typeof error === "string"
-                if (!isErrorMsg) {
-                  console.error(error)
-                }
                 resolve(getValidateResult(false, isErrorMsg ? error : ""));
               }
             }),
