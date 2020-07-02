@@ -57,7 +57,10 @@ const Form: React.FunctionComponent<Props> = ({
 
   return (
     <FormContext.Consumer>
-      {({ formContext: { fields = {} } }) => {
+      {({ formContext: { fields } }) => {
+        if (!fields) {
+          return
+        }
         const { getForm, setForm, getErrorMsgs, setErrorsMsgs } = fields;
         const value = getForm && getForm(name);
         const errorMsgs = getErrorMsgs && getErrorMsgs(name);
@@ -81,7 +84,7 @@ const Form: React.FunctionComponent<Props> = ({
           setErrorsMsgs &&
             setErrorsMsgs((preErrorMsgs) => {
               return Object.assign({}, preErrorMsgs, {
-                [name]: errorMsgs || [],
+                [name]: errorMsgs,
               });
             });
         };

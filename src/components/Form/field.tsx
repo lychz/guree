@@ -16,9 +16,9 @@ export interface ChildrenProp {
   rules: Rules;
 }
 
-export type Set = (state: React.SetStateAction<FormState>) => void;
-export type Get = (name: string) => unknown;
-export type GetAll = () => FormState;
+export type SetForm = (state: React.SetStateAction<FormState>) => void;
+export type GetForm = (name: string) => unknown;
+export type GetAllForm = () => FormState;
 export type SetErrorsMsgs = (
   errorMsgs: React.SetStateAction<FormErrorsMsgs>
 ) => void;
@@ -27,9 +27,9 @@ export type GetAllErrorMsgs = () => FormErrorsMsgs;
 export type GetChildrenProps = () => ChildrenProp[];
 
 export interface UseForm {
-  setForm: Set;
-  getForm: Get;
-  getAllForm: GetAll;
+  setForm: SetForm;
+  getForm: GetForm;
+  getAllForm: GetAllForm;
   setErrorsMsgs: SetErrorsMsgs;
   getErrorMsgs: GetErrorMsgs;
   getAllErrorMsgs: GetAllErrorMsgs;

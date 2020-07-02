@@ -33,7 +33,7 @@ const submit = (value) => {
 };
 
 <Form onFinish={submit}>
-  <FormItem label="username" name="username">
+  <FormItem label="userName" name="userName">
     <Input></Input>
   </FormItem>
 
@@ -97,7 +97,7 @@ const changeCol = (labelCol, wrapperCol) => {
           span: 4,
         },
         {
-          span: 20,
+          span: 12,
         }
       )}
     >
@@ -108,8 +108,8 @@ const changeCol = (labelCol, wrapperCol) => {
   <br />
   <Form>
     <FormItem
-      label="username"
-      name="username"
+      label="userName"
+      name="userName"
       labelAlign={labelAlign}
       labelCol={labelCol}
       wrapperCol={wrapperCol}
@@ -147,7 +147,7 @@ const submit = (value) => {
 };
 
 <Form onFinish={submit}>
-  <FormItem label="username" name="username" defaultValue="username">
+  <FormItem label="userName" name="userName" defaultValue="userName">
     <Input></Input>
   </FormItem>
 
@@ -176,7 +176,7 @@ const onItemChange = (value) => {
   console.log(value);
 };
 <Form onChange={onChange}>
-  <FormItem label="username" name="username" onChange={onItemChange}>
+  <FormItem label="userName" name="userName" onChange={onItemChange}>
     <Input></Input>
   </FormItem>
 
@@ -202,7 +202,7 @@ const submit = (value) => {
 };
 
 <Form onFinish={submit}>
-  <FormItem label="username" name="username" rules={[{ required: true }]}>
+  <FormItem label="userName" name="userName" rules={[{ required: true }]}>
     <Input></Input>
   </FormItem>
 
@@ -221,6 +221,8 @@ const submit = (value) => {
 
 ### 自定义验证器
 
+表单的每一项独立验证，互不影响。单个 FormItem 有多个验证器的时候，会在所有验证器都验证结束后，得到所有的错误信息
+
 ```jsx
 import { FormItem } from "@components/Form";
 import Input from "@components/Input";
@@ -233,17 +235,17 @@ const submit = (value) => {
 
 <Form onFinish={submit}>
   <FormItem
-    label="username"
-    name="username"
+    label="userName"
+    name="userName"
     rules={[
       { required: true },
       {
         validator: (_, value) => {
           return new Promise((resolve, reject) => {
-            if (value.length < 10) {
+            if (value && value.length <= 10) {
               reject("用户名长度必须大于10个字符");
             } else {
-              resolve()
+              resolve();
             }
           });
         },
@@ -252,10 +254,10 @@ const submit = (value) => {
         validator: (_, value) => {
           return new Promise((resolve, reject) => {
             setTimeout(() => {
-              if (value === "username") {
+              if (value === "userName") {
                 reject("用户名已经被占用");
               } else {
-                resolve()
+                resolve();
               }
             }, 1000);
           });
@@ -272,6 +274,118 @@ const submit = (value) => {
     rules={[{ required: true, message: "password is required" }]}
   >
     <Input></Input>
+  </FormItem>
+  <FormItem>
+    <Button htmlType="submit">submit</Button>
+  </FormItem>
+</Form>;
+```
+
+### 各控件使用范例
+
+```jsx
+import { FormItem } from "@components/Form";
+import Input from "@components/Input";
+import Button from "@components/Button";
+import Radio, { RadioGroup } from "@components/Radio";
+import Checkbox, { CheckboxGroup } from "@components/Checkbox";
+import Switch from "@components/Switch";
+import { useState } from "react";
+
+const submit = (value) => {
+  console.log(value);
+};
+
+<Form onFinish={submit}>
+  <FormItem
+    label="userName"
+    name="userName"
+    rules={[
+      { required: true },
+      {
+        validator: (_, value) => {
+          return new Promise((resolve, reject) => {
+            if (value && value.length <= 10) {
+              reject("用户名长度必须大于10个字符");
+            } else {
+              resolve();
+            }
+          });
+        },
+      },
+      {
+        validator: (_, value) => {
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (value === "userName") {
+                reject("用户名已经被占用");
+              } else {
+                resolve();
+              }
+            }, 1000);
+          });
+        },
+      },
+    ]}
+  >
+    <Input></Input>
+  </FormItem>
+
+  <FormItem
+    label="password"
+    name="password"
+    rules={[{ required: true, message: "password is required" }]}
+  >
+    <Input></Input>
+  </FormItem>
+  <FormItem label="radio" name="radio" rules={[{ required: true }]}>
+    <RadioGroup>
+      <Radio value={1}>radio1</Radio>
+      <Radio value={2}>radio2</Radio>
+      <Radio value={3}>radio3</Radio>
+    </RadioGroup>
+  </FormItem>
+  <FormItem
+    label="chckout"
+    name="chckout"
+    rules={[
+      {
+        validator: (_, value) => {
+          return new Promise((resolve, reject) => {
+            if (value && value.length > 0) {
+              resolve();
+            } else {
+              reject("请至少选中一项");
+            }
+          });
+        },
+      },
+    ]}
+  >
+    <CheckboxGroup>
+      <Checkbox value={1}>checkbox1</Checkbox>
+      <Checkbox value={2}>checkbox2</Checkbox>
+      <Checkbox value={3}>checkbox3</Checkbox>
+    </CheckboxGroup>
+  </FormItem>
+  <FormItem
+    label="switch"
+    name="switch"
+    rules={[
+      {
+        validator: (_, value) => {
+          return new Promise((resolve, reject) => {
+            if (!value) {
+              reject("必须选中")
+            } else {
+              resolve()
+            }
+          });
+        },
+      },
+    ]}
+  >
+    <Switch></Switch>
   </FormItem>
   <FormItem>
     <Button htmlType="submit">submit</Button>

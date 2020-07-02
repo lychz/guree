@@ -1,0 +1,443 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form 组件 正确导出 Form 组件 1`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-8"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-right"
+        />
+      </div>
+      <div
+        className="guree-col guree-col-16"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试 FormItem 组件 defaultValue 参数 1`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-8"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-right"
+        />
+      </div>
+      <div
+        className="guree-col guree-col-16"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value="default Value"
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试 FormItem 组件 label 参数 1`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-8"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-right"
+        >
+          userName
+        </div>
+      </div>
+      <div
+        className="guree-col guree-col-16"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试 FormItem 组件 labelAlign 参数 1`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-8"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-left"
+        >
+          userName
+        </div>
+      </div>
+      <div
+        className="guree-col guree-col-16"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试 FormItem 组件 labelAlign 参数 2`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-8"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-center"
+        >
+          userName
+        </div>
+      </div>
+      <div
+        className="guree-col guree-col-16"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试 FormItem 组件 labelAlign 参数 3`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-8"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-right"
+        >
+          userName
+        </div>
+      </div>
+      <div
+        className="guree-col guree-col-16"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试 FormItem 组件 labelCol 参数 1`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-4"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-right"
+        />
+      </div>
+      <div
+        className="guree-col guree-col-16"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试 FormItem 组件 wrapperCol 参数 1`] = `
+<form
+  className="guree-form"
+  onSubmit={[Function]}
+>
+  <div
+    className="guree-form-item"
+  >
+    <div
+      className="guree-row"
+      style={Object {}}
+    >
+      <div
+        className="guree-col guree-col-8"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-label guree-form-item-label-right"
+        />
+      </div>
+      <div
+        className="guree-col guree-col-12"
+        style={
+          Object {
+            "flex": undefined,
+          }
+        }
+      >
+        <div
+          className="guree-form-item-input"
+        >
+          <div
+            className="guree-input guree-input"
+          >
+            <input
+              className="guree-input-content"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="guree-form-item-error"
+        />
+      </div>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Form 组件 测试没有 Form 包裹的 FormItem 1`] = `null`;
