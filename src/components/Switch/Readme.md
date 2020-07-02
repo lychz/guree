@@ -12,7 +12,7 @@
 
 ### 默认选中
 ```jsx
-<Switch defaultChecked></Switch>
+<Switch defaultValue></Switch>
 ```
 
 ### 禁用状态
@@ -26,13 +26,13 @@
 ```jsx
 import Button from "@components/Button";
 import { useState } from "react";
-const [checked, setChecked] = useState(false)
-const change = (value) => {
-  setChecked(!checked)
+const [value, setChecked] = useState(false)
+const change = () => {
+  setChecked(!value)
 }
 
 <div>
-  <Switch defaultChecked checked={checked}></Switch>
+  <Switch defaultValue value={value}></Switch>
   <br />
   <br />
   <Button onClick={change}>switch</Button>

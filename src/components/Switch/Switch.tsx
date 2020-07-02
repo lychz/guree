@@ -10,9 +10,9 @@ import { isUndefined } from "util";
 
 interface Props {
   /** 选中状态 */
-  checked?: boolean;
+  value?: boolean;
   /** 默认选中状态 */
-  defaultChecked?: boolean;
+  defaultValue?: boolean;
   /** 选中时的内容 */
   checkedChildren?: ReactNode;
   /** 未选中时的内容 */
@@ -24,8 +24,8 @@ interface Props {
 }
 
 const Switch: React.FunctionComponent<Props> = ({
-  checked,
-  defaultChecked,
+  value,
+  defaultValue,
   checkedChildren,
   unCheckedChildren,
   disabled = false,
@@ -35,7 +35,7 @@ const Switch: React.FunctionComponent<Props> = ({
     scopedClass("switch", ...classes);
 
   const [checkedStatus, setCheckedStatus] = useState(
-    isUndefined(checked) ? defaultChecked : checked
+    isUndefined(value) ? defaultValue : value
   );
 
   const switchClassName = combineClasses({
@@ -46,12 +46,12 @@ const Switch: React.FunctionComponent<Props> = ({
 
   const change: MouseEventHandler<HTMLElement> = (e) => {
     onChange && onChange(!checkedStatus);
-    if (disabled || !isUndefined(checked)) {
+    if (disabled || !isUndefined(value)) {
       return;
     }
     setCheckedStatus(!checkedStatus);
   };
-  updateStateOnPropChange(checked, setCheckedStatus);
+  updateStateOnPropChange(value, setCheckedStatus);
 
   return (
     <span className={switchClassName} onClick={change}>

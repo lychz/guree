@@ -72,7 +72,7 @@ exports[`Switch 组件 测试 Switch 组件 checkedChildren 参数 1`] = `
 </span>
 `;
 
-exports[`Switch 组件 测试 Switch 组件 defaultChecked 参数 1`] = `
+exports[`Switch 组件 测试 Switch 组件 defaultValue 参数 1`] = `
 <span
   className="guree-switch guree-switch-checked"
   onClick={[Function]}

@@ -23,8 +23,8 @@ describe("Switch 组件", () => {
     expect(sw).toMatchSnapshot();
   });
 
-  it("测试 Switch 组件 defaultChecked 参数", () => {
-    const sw = renderer.create(<Switch defaultChecked></Switch>).toJSON();
+  it("测试 Switch 组件 defaultValue 参数", () => {
+    const sw = renderer.create(<Switch defaultValue></Switch>).toJSON();
     expect(sw).toMatchSnapshot();
   });
 
@@ -34,7 +34,7 @@ describe("Switch 组件", () => {
   });
 
   it("测试 Switch 组件 checked 参数", () => {
-    const sw = renderer.create(<Switch checked></Switch>).toJSON();
+    const sw = renderer.create(<Switch value></Switch>).toJSON();
     expect(sw).toMatchSnapshot();
   });
 
@@ -65,8 +65,8 @@ describe("Switch 组件", () => {
   });
 
   it("测试 Switch 组件 checked 不为 undefined 状态下的点击事件", () => {
-    const sw1 = mount(<Switch checked={true}></Switch>);
-    const sw2 = mount(<Switch checked={false}></Switch>);
+    const sw1 = mount(<Switch value={true}></Switch>);
+    const sw2 = mount(<Switch value={false}></Switch>);
     sw1.simulate("click");
     sw2.simulate("click");
     sw1.update();
