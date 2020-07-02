@@ -23,7 +23,6 @@ export type SetErrorsMsgs = (
   errorMsgs: React.SetStateAction<FormErrorsMsgs>
 ) => void;
 export type GetErrorMsgs = (name: string) => string[];
-export type GetAllErrorMsgs = () => FormErrorsMsgs;
 export type GetChildrenProps = () => ChildrenProp[];
 
 export interface UseForm {
@@ -32,7 +31,6 @@ export interface UseForm {
   getAllForm: GetAllForm;
   setErrorsMsgs: SetErrorsMsgs;
   getErrorMsgs: GetErrorMsgs;
-  getAllErrorMsgs: GetAllErrorMsgs;
   getChildrenProps: GetChildrenProps;
 }
 
@@ -97,11 +95,7 @@ const useFormField: (children: ReactElement) => UseForm = (children) => {
   const [formErrorsMsgs, setFormErrorsMsgs] = useState(initFormErrors);
 
   const setForm = (state: React.SetStateAction<FormState>) => {
-    if (typeof state === "function") {
-      setFormState(state);
-    } else {
-      setFormState(Object.assign({}, formState, state));
-    }
+    setFormState(state);
   };
 
   const getForm = (name: string) => {
@@ -113,19 +107,11 @@ const useFormField: (children: ReactElement) => UseForm = (children) => {
   };
 
   const setErrorsMsgs = (errorMsgs: React.SetStateAction<FormErrorsMsgs>) => {
-    if (typeof errorMsgs === "function") {
-      setFormErrorsMsgs(errorMsgs);
-    } else {
-      setFormErrorsMsgs(Object.assign({}, formErrorsMsgs, errorMsgs));
-    }
+    setFormErrorsMsgs(errorMsgs);
   };
 
   const getErrorMsgs = (name: string) => {
     return formErrorsMsgs[name];
-  };
-
-  const getAllErrorMsgs = () => {
-    return formErrorsMsgs;
   };
 
   const getChildrenProps = () => {
@@ -138,7 +124,6 @@ const useFormField: (children: ReactElement) => UseForm = (children) => {
     getAllForm,
     setErrorsMsgs,
     getErrorMsgs,
-    getAllErrorMsgs,
     getChildrenProps,
   };
 };
