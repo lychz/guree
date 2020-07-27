@@ -1,5 +1,7 @@
 使用 React + TypeScript 编写的 UI 组件库
 
+### [github](https://github.com/lychz/guree)
+
 ### 安装
 
 ``` js static
